@@ -1,0 +1,3695 @@
+<MODULE>
+mcar_control
+</MODULE>
+
+<OPTC51>
+--model-small
+</OPTC51>
+
+<SEGMENTS>
+R_GSINIT,code,0000,NO
+R_BSEG,bit,000C,NO
+R_XSEG,xdata,000E,NO
+BIT_BANK,data,0001,OV
+R_CONST,code,0000,NO
+rbank0,data,0000,OV
+rbank2,data,0000,OV
+R_PSEG,xdata,0000,NO
+R_DINIT,code,0029,NO
+R_DSEG,data,004D,NO
+R_OSEG,data,0003,OV
+R_IXSEG,xdata,000B,NO
+R_ISEG,idata,0000,NO
+R_HOME,code,0000,NO
+R_XINIT,code,000B,NO
+R_CSEG,code,1A7D,NO
+</SEGMENTS>
+
+<LOCALS>
+L017024?,R_CSEG,051C,0000
+_Calibrate_LSensors_flags_1_108,R_XSEG,0006,0002
+L017022?,R_CSEG,027F,0000
+L021019?,R_CSEG,139C,0000
+L021018?,R_CSEG,1319,0000
+L017039?,R_CSEG,029E,0000
+L017038?,R_CSEG,0290,0000
+L021015?,R_CSEG,128D,0000
+L018018?,R_CSEG,0BC3,0000
+L027009?,R_CSEG,1A06,0000
+L027007?,R_CSEG,19E9,0000
+L018015?,R_CSEG,0749,0000
+L027006?,R_CSEG,19D1,0000
+bits,BIT_BANK,0000,0001
+L027004?,R_CSEG,19B4,0000
+L018012?,R_CSEG,085B,0000
+L017049?,R_CSEG,0504,0000
+L017047?,R_CSEG,044C,0000
+L003007?,R_CSEG,003E,0000
+L017043?,R_CSEG,036F,0000
+L018024?,R_CSEG,0A50,0000
+L003004?,R_CSEG,002E,0000
+L003001?,R_CSEG,0033,0000
+_Calibrate_LSensors_VL_1_107,R_DSEG,000E,0003
+_Follow_Tape_sloc3_1_0,R_DSEG,0024,0004
+L018037?,R_CSEG,0D77,0000
+L018035?,R_CSEG,0C27,0000
+L019017?,R_CSEG,1059,0000
+L019016?,R_CSEG,0FB6,0000
+L018033?,R_CSEG,0C0E,0000
+L018031?,R_CSEG,0BF9,0000
+L018030?,R_CSEG,0894,0000
+L019012?,R_CSEG,0FDF,0000
+L004009?,R_CSEG,007C,0000
+L004007?,R_CSEG,0075,0000
+L018044?,R_CSEG,0EBF,0000
+L004005?,R_CSEG,004A,0000
+L018109?,R_CSEG,0C33,0000
+L019023?,R_CSEG,108D,0000
+L018108?,R_CSEG,0C2D,0000
+L018040?,R_CSEG,0D79,0000
+L019021?,R_CSEG,0F08,0000
+L004001?,R_CSEG,0053,0000
+L018105?,R_CSEG,0BC0,0000
+L018102?,R_CSEG,0AB9,0000
+L018101?,R_CSEG,0A39,0000
+_Follow_Tape_sloc4_1_0,R_DSEG,0028,0004
+L019038?,R_CSEG,0F0E,0000
+_Bridge_Rotate_sloc0_1_0,R_DSEG,0043,0003
+L020006?,R_CSEG,1171,0000
+L017009?,R_CSEG,0401,0000
+L020004?,R_CSEG,10BF,0000
+L017007?,R_CSEG,035A,0000
+_Run_Autonomous_gnd_VR_1_164,R_XSEG,000A,0002
+L020002?,R_CSEG,114D,0000
+L019048?,R_CSEG,1088,0000
+L017003?,R_CSEG,033A,0000
+L017002?,R_CSEG,0321,0000
+b0,BIT_BANK,0000,0000
+b1,BIT_BANK,0000,0000
+b2,BIT_BANK,0000,0000
+b3,BIT_BANK,0000,0004
+b4,BIT_BANK,0000,0000
+b5,BIT_BANK,0000,0000
+b6,BIT_BANK,0000,0000
+b7,BIT_BANK,0000,0000
+L005005?,R_CSEG,00BC,0000
+_Calibrate_LSensors_countM_1_108,R_XSEG,0002,0002
+L005003?,R_CSEG,00B4,0000
+L005002?,R_CSEG,00AA,0000
+L005001?,R_CSEG,00A0,0000
+__xinit__dir_count,R_XINIT,0006,0000
+_Bridge_Rotate_sloc1_1_0,R_DSEG,0046,0003
+L024010?,R_CSEG,1615,0000
+L021009?,R_CSEG,139C,0000
+L021007?,R_CSEG,1296,0000
+L018008?,R_CSEG,0856,0000
+L021004?,R_CSEG,1204,0000
+L018007?,R_CSEG,0842,0000
+L018003?,R_CSEG,0744,0000
+L018002?,R_CSEG,0738,0000
+L024025?,R_CSEG,1775,0000
+L024024?,R_CSEG,16E5,0000
+L024023?,R_CSEG,1604,0000
+L024021?,R_CSEG,14DB,0000
+L006004?,R_CSEG,00CA,0000
+L006001?,R_CSEG,00C5,0000
+L018099?,R_CSEG,09CE,0000
+L018098?,R_CSEG,092F,0000
+L018096?,R_CSEG,0821,0000
+L018093?,R_CSEG,0722,0000
+L018091?,R_CSEG,0653,0000
+_Bridge_Rotate_sloc2_1_0,R_DSEG,0049,0004
+_Rotate_sloc0_1_0,R_DSEG,0037,0003
+L022005?,R_CSEG,146F,0000
+L019008?,R_CSEG,1035,0000
+L022002?,R_CSEG,143F,0000
+__xinit__timer_count,R_XINIT,0009,0000
+L022001?,R_CSEG,143B,0000
+L019002?,R_CSEG,1025,0000
+_Run_Autonomous_gnd_VL_1_164,R_XSEG,0008,0002
+L017050?,R_CSEG,0507,0000
+_Follow_Tape_gnd_VL_1_119,R_DSEG,0017,0003
+__xinit__pwm,R_XINIT,0004,0000
+L014014?,R_CSEG,0222,0000
+L023004?,R_CSEG,14BE,0000
+_Find_Tape_flag_1_145,R_BSEG,000B,0001
+L023002?,R_CSEG,14A2,0000
+_Track_Object_flag_1_136,R_BSEG,000A,0001
+_Run_Autonomous_gnd_VM_1_164,R_XSEG,000C,0002
+L018058?,R_CSEG,05BC,0000
+L018055?,R_CSEG,0EC4,0000
+L018050?,R_CSEG,0EF7,0000
+_Follow_Tape_sloc0_1_0,R_DSEG,001A,0003
+L027017?,R_CSEG,1987,0000
+L027010?,R_CSEG,1A1E,0000
+_Bridge_Rotate_gnd_VL_1_159,R_DSEG,0040,0003
+L024006?,R_CSEG,163E,0000
+L024002?,R_CSEG,1511,0000
+L012002?,R_CSEG,01B6,0000
+_Rotate_gnd_VL_1_149,R_DSEG,0034,0003
+_Follow_Tape_sloc1_1_0,R_DSEG,001D,0003
+__xinit__pwm_count,R_XINIT,0008,0000
+_Calibrate_LSensors_countL_1_108,R_XSEG,0000,0002
+L004018?,R_CSEG,0056,0000
+_Find_Tape_gnd_VM_1_144,R_DSEG,002E,0003
+L013007?,R_CSEG,01E4,0000
+L018119?,R_CSEG,0EF7,0000
+L018118?,R_CSEG,0EF1,0000
+L013004?,R_CSEG,01F4,0000
+L013002?,R_CSEG,01D2,0000
+L018115?,R_CSEG,0E7F,0000
+L018114?,R_CSEG,0E16,0000
+L018113?,R_CSEG,0D7F,0000
+L018110?,R_CSEG,0CD2,0000
+_Follow_Tape_sloc2_1_0,R_DSEG,0020,0004
+L017017?,R_CSEG,04F4,0000
+L017016?,R_CSEG,04DE,0000
+L020012?,R_CSEG,10C5,0000
+L017014?,R_CSEG,0437,0000
+__xinit__pwmR,R_XINIT,0002,0000
+L026004?,R_CSEG,1917,0000
+__xinit__pwmL,R_XINIT,0000,0000
+L017010?,R_CSEG,0417,0000
+L014009?,R_CSEG,0249,0000
+L026001?,R_CSEG,190C,0000
+L014007?,R_CSEG,0232,0000
+L005015?,R_CSEG,009B,0000
+_Calibrate_LSensors_countR_1_108,R_XSEG,0004,0002
+L005014?,R_CSEG,0096,0000
+L005013?,R_CSEG,008A,0000
+L014004?,R_CSEG,0241,0000
+L005011?,R_CSEG,0088,0000
+</LOCALS>
+
+<PUBLICS>
+_InitPinADC,R_CSEG,007D,0000
+_dir_flag,R_BSEG,0006,0001
+_Volts_at_Pin,R_CSEG,00D4,0000
+_main,R_CSEG,1A4A,0000
+_debug,R_CSEG,01B3,0000
+_claw_control,R_CSEG,01B8,0000
+_Bridge_Rotate_PARM_2,R_DSEG,003A,0003
+_Bridge_Rotate_PARM_3,R_DSEG,003D,0003
+_find_circle2_flag,R_BSEG,0005,0001
+__c51_external_startup,R_CSEG,18EE,0000
+_timer_count,R_IXSEG,0009,0002
+_find_bridge_flag,R_BSEG,0003,0001
+_InitPinADC_PARM_2,R_OSEG,0000,0001
+_mot_dir_PARM_2,R_OSEG,0001,0002
+_dir,R_BSEG,0002,0001
+_Follow_Tape_PARM_2,R_DSEG,0011,0003
+_Follow_Tape_PARM_3,R_DSEG,0014,0003
+_Find_Tape_PARM_2,R_DSEG,002C,0002
+_Bridge_Rotate,R_CSEG,14CC,0000
+_Timer2_ISR,R_CSEG,1957,0000
+_Rotate_PARM_2,R_DSEG,0031,0003
+_Track_Object,R_CSEG,0EFA,0000
+_sonar_op,R_CSEG,021A,0000
+_sonar_count_2,R_DSEG,0002,0002
+_Follow_Tape,R_CSEG,051D,0000
+_MR_dir,R_BSEG,0000,0001
+_InitADC,R_CSEG,0000,0000
+_Calibrate_LSensors_PARM_2,R_DSEG,0008,0003
+_Calibrate_LSensors_PARM_3,R_DSEG,000B,0003
+_claw_count,R_DSEG,0006,0002
+_Rotate,R_CSEG,1172,0000
+_pwm_count,R_IXSEG,0008,0001
+_spin_right,R_CSEG,0184,0000
+_Find_Object,R_CSEG,1473,0000
+_pwmL,R_IXSEG,0000,0002
+_pwmR,R_IXSEG,0002,0002
+_Detect_Object,R_CSEG,139D,0000
+_Distance,R_CSEG,024A,0000
+_sonar_state,R_BSEG,0009,0001
+_Claw_Pos,R_CSEG,0253,0000
+_Calibrate_LSensors,R_CSEG,025A,0000
+_break_when_dir_found,R_BSEG,0007,0001
+_Timer3us,R_CSEG,0018,0000
+_sonar_count,R_DSEG,0000,0002
+_spin_left,R_CSEG,0156,0000
+_ML_dir,R_BSEG,0001,0001
+_mot_dir,R_CSEG,012F,0000
+_Run_Autonomous,R_CSEG,1783,0000
+_Find_Tape,R_CSEG,10B4,0000
+_ADC_at_Pin,R_CSEG,00C0,0000
+_claw_pos,R_DSEG,0004,0002
+_pwm,R_IXSEG,0004,0002
+_stop,R_CSEG,0142,0000
+_waitms,R_CSEG,0042,0000
+_find_circle1_flag,R_BSEG,0004,0001
+_dir_count,R_IXSEG,0006,0002
+_circ2,R_BSEG,0008,0001
+</PUBLICS>
+
+<EXTERNALS>
+__gptrget,any,0000,0000
+___uint2fs,any,0000,0000
+___fsgt,any,0000,0000
+___fslt,any,0000,0000
+___fsmul,any,0000,0000
+_abs,any,0000,0000
+__gptrput,any,0000,0000
+___fs2uint,any,0000,0000
+_crt0,any,0000,0000
+___sint2fs,any,0000,0000
+___fsdiv,any,0000,0000
+</EXTERNALS>
+
+<CODE AT 0000>
+</CODE>
+
+<CODE R_HOME>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_CSEG>
+</CODE>
+
+<CODE AT 0000>
+02 addr16(_crt0;)  
+</CODE>
+
+<CODE AT 002B>
+02 addr16(_Timer2_ISR;)  
+</CODE>
+
+<CODE R_HOME>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_DINIT>
+E4
+F5 data8(_sonar_count;)
+F5 data8(_sonar_count;0x0001;+;)
+E4
+F5 data8(_sonar_count_2;)
+F5 data8(_sonar_count_2;0x0001;+;)
+75 data8(_claw_pos;) 02
+E4
+F5 data8(_claw_pos;0x0001;+;)
+E4
+F5 data8(_claw_count;)
+F5 data8(_claw_count;0x0001;+;)
+C2 bit(_MR_dir;)
+C2 bit(_ML_dir;)
+C2 bit(_dir;)
+C2 bit(_find_bridge_flag;)
+C2 bit(_find_circle1_flag;)
+C2 bit(_find_circle2_flag;)
+C2 bit(_dir_flag;)
+C2 bit(_break_when_dir_found;)
+C2 bit(_circ2;)
+C2 bit(_sonar_state;)
+</CODE>
+
+<CODE R_CSEG>
+75 A7 00
+75 B2 80
+75 BC F8
+75 B9 1E
+75 E8 00
+75 DF 3F
+75 B3 00
+D2 EF
+22
+AA 82
+43 8E 40
+75 92 B8
+75 93 FF
+85 92 94
+85 93 95
+75 91 04
+7B 00
+C3
+EB
+9A
+50 rel2(L003007?;)
+E5 91
+30 E7 rel3(L003001?;)
+53 91 7F
+0B
+80 rel2(L003004?;)
+75 91 00
+22
+AA 82
+AB 83
+7C 00
+7D 00
+C3
+EC
+9A
+ED
+9B
+50 rel2(L004009?;)
+7E 00
+BE 04 rel3(L004018?;)
+50 rel2(L004007?;)
+75 82 FA
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+12 addr16(_Timer3us;)  
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+0E
+80 rel2(L004001?;)
+0C
+BC 00 rel3(L004005?;)
+0D
+80 rel2(L004005?;)
+22
+AA 82
+85 data8(_InitPinADC_PARM_2;) F0
+05 F0
+74 01
+80 rel2(L005013?;)
+25 E0
+D5 F0 rel3(L005011?;)
+FB
+75 A7 20
+BA 00 rel3(L005014?;)
+80 rel2(L005001?;)
+BA 01 rel3(L005015?;)
+80 rel2(L005002?;)
+BA 02 rel3(L005005?;)
+80 rel2(L005003?;)
+EB
+F4
+FA
+52 F1
+EB
+42 D4
+80 rel2(L005005?;)
+EB
+F4
+FA
+52 F2
+EB
+42 D5
+80 rel2(L005005?;)
+EB
+F4
+FA
+52 F3
+EB
+42 CC
+75 A7 00
+22
+85 82 BB
+D2 EC
+20 EC rel3(L006001?;)
+D2 EC
+20 EC rel3(L006004?;)
+85 BD 82
+85 BE 83
+22
+12 addr16(_ADC_at_Pin;)  
+12 addr16(___uint2fs;)  
+AA 82
+AB 83
+AC F0
+FD
+C0 02
+C0 03
+C0 04
+C0 05
+90 6C 8B
+75 F0 53
+74 40
+12 addr16(___fsmul;)  
+AA 82
+AB 83
+AC F0
+FD
+E5 81
+24 FC
+F5 81
+E4
+C0 E0
+74 FC
+C0 E0
+74 7F
+C0 E0
+74 46
+C0 E0
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fsdiv;)  
+AA 82
+AB 83
+AC F0
+FD
+E5 81
+24 FC
+F5 81
+8A 82
+8B 83
+8C F0
+ED
+22
+AA 82
+AB 83
+EA
+4B
+24 FF
+92 data8(_ML_dir;)
+E5 data8(_mot_dir_PARM_2;)
+45 data8(_mot_dir_PARM_2;0x0001;+;)
+24 FF
+92 data8(_MR_dir;)
+22
+90 data16(_pwmL;)  
+E4
+F0
+A3
+F0
+90 data16(_pwmR;)  
+E4
+F0
+A3
+F0
+90 00 64
+02 addr16(_waitms;)  
+AA 82
+AB 83
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 01
+C0 02
+C0 03
+12 addr16(_mot_dir;)  
+D0 03
+D0 02
+90 data16(_pwmR;)  
+74 28
+2A
+F0
+E4
+3B
+A3
+F0
+90 data16(_pwmL;)  
+74 19
+2A
+F0
+E4
+3B
+A3
+F0
+22
+AA 82
+AB 83
+75 data8(_mot_dir_PARM_2;) 01
+E4
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 00
+C0 02
+C0 03
+12 addr16(_mot_dir;)  
+D0 03
+D0 02
+90 data16(_pwmL;)  
+74 28
+2A
+F0
+E4
+3B
+A3
+F0
+90 data16(_pwmR;)  
+74 19
+2A
+F0
+E4
+3B
+A3
+F0
+22
+12 addr16(_stop;)  
+80 rel2(L012002?;)
+74 01
+25 data8(_claw_count;)
+F5 data8(_claw_count;)
+E4
+35 data8(_claw_count;0x0001;+;)
+F5 data8(_claw_count;0x0001;+;)
+C3
+74 C7
+95 data8(_claw_count;)
+E4
+95 data8(_claw_count;0x0001;+;)
+50 rel2(L013002?;)
+E4
+F5 data8(_claw_count;)
+F5 data8(_claw_count;0x0001;+;)
+C3
+E5 data8(_claw_count;)
+94 05
+E5 data8(_claw_count;0x0001;+;)
+94 00
+50 rel2(L013007?;)
+B2 A1
+D2 97
+D2 A0
+22
+C3
+E5 data8(_claw_count;)
+94 16
+E5 data8(_claw_count;0x0001;+;)
+94 00
+40 rel2(L013004?;)
+C2 97
+C2 A0
+22
+74 05
+25 data8(_claw_pos;)
+FA
+E4
+35 data8(_claw_pos;0x0001;+;)
+FB
+C3
+E5 data8(_claw_count;)
+9A
+E5 data8(_claw_count;0x0001;+;)
+9B
+92 97
+74 16
+C3
+95 data8(_claw_pos;)
+FA
+E4
+95 data8(_claw_pos;0x0001;+;)
+FB
+C3
+E5 data8(_claw_count;)
+9A
+E5 data8(_claw_count;0x0001;+;)
+9B
+92 A0
+22
+90 data16(_pwm_count;)  
+E0
+FA
+BA 32 rel3(L014014?;)
+92 90
+20 bit(_sonar_state;) rel3(L014007?;)
+30 87 rel3(L014009?;)
+D2 bit(_sonar_state;)
+E4
+F5 data8(_sonar_count;)
+F5 data8(_sonar_count;0x0001;+;)
+22
+30 87 rel3(L014004?;)
+74 01
+25 data8(_sonar_count;)
+F5 data8(_sonar_count;)
+E4
+35 data8(_sonar_count;0x0001;+;)
+F5 data8(_sonar_count;0x0001;+;)
+22
+85 data8(_sonar_count;) data8(_sonar_count_2;)
+85 data8(_sonar_count;0x0001;+;) data8(_sonar_count_2;0x0001;+;)
+C2 bit(_sonar_state;)
+22
+85 data8(_sonar_count_2;) 82
+85 data8(_sonar_count_2;0x0001;+;) 83
+02 addr16(___sint2fs;)  
+85 82 data8(_claw_pos;)
+85 83 data8(_claw_pos;0x0001;+;)
+22
+85 82 data8(_Calibrate_LSensors_VL_1_107;)
+85 83 data8(_Calibrate_LSensors_VL_1_107;0x0001;+;)
+85 F0 data8(_Calibrate_LSensors_VL_1_107;0x0002;+;)
+90 data16(_Calibrate_LSensors_countL_1_108;)  
+E4
+F0
+A3
+F0
+90 data16(_Calibrate_LSensors_countM_1_108;)  
+E4
+F0
+A3
+F0
+90 data16(_Calibrate_LSensors_countR_1_108;)  
+E4
+F0
+A3
+F0
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+E4
+F0
+A3
+F0
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+E0
+FD
+A3
+E0
+FE
+BD 07 rel3(L017038?;)
+BE 00 rel3(L017038?;)
+02 addr16(L017024?;)  
+53 05 02
+7E 00
+BD 02 rel3(L017039?;)
+BE 00 rel3(L017039?;)
+02 addr16(L017007?;)  
+75 82 0C
+12 addr16(_Volts_at_Pin;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AD 82
+AE 83
+AF F0
+F8
+E5 81
+24 FC
+F5 81
+8D 82
+8E 83
+8F F0
+E8
+12 addr16(___fs2uint;)  
+AD 82
+AE 83
+85 data8(_Calibrate_LSensors_VL_1_107;) 82
+85 data8(_Calibrate_LSensors_VL_1_107;0x0001;+;) 83
+85 data8(_Calibrate_LSensors_VL_1_107;0x0002;+;) F0
+12 addr16(__gptrget;)  
+FF
+A3
+12 addr16(__gptrget;)  
+F8
+EF
+C3
+9D
+F5 82
+E8
+9E
+F5 83
+C0 05
+C0 06
+12 addr16(_abs;)  
+AF 82
+A8 83
+D0 06
+D0 05
+C3
+74 32
+9F
+E4
+64 80
+88 F0
+63 F0 80
+95 F0
+40 rel2(L017002?;)
+90 data16(_Calibrate_LSensors_countL_1_108;)  
+E0
+24 01
+F0
+A3
+E0
+34 00
+F0
+80 rel2(L017003?;)
+90 data16(_Calibrate_LSensors_countL_1_108;)  
+E4
+F0
+A3
+F0
+85 data8(_Calibrate_LSensors_VL_1_107;) 82
+85 data8(_Calibrate_LSensors_VL_1_107;0x0001;+;) 83
+85 data8(_Calibrate_LSensors_VL_1_107;0x0002;+;) F0
+ED
+12 addr16(__gptrput;)  
+A3
+EE
+12 addr16(__gptrput;)  
+90 data16(_Calibrate_LSensors_countL_1_108;)  
+E0
+FD
+A3
+E0
+FE
+BD 0A rel3(L017007?;)
+BE 00 rel3(L017007?;)
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+E0
+FD
+A3
+E0
+FE
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+74 02
+4D
+F0
+A3
+EE
+F0
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+E0
+FD
+A3
+E0
+53 05 01
+7E 00
+BD 01 rel3(L017043?;)
+BE 00 rel3(L017043?;)
+02 addr16(L017014?;)  
+75 82 0A
+12 addr16(_Volts_at_Pin;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AD 82
+AE 83
+AF F0
+F8
+E5 81
+24 FC
+F5 81
+8D 82
+8E 83
+8F F0
+E8
+12 addr16(___fs2uint;)  
+AD 82
+AE 83
+AF data8(_Calibrate_LSensors_PARM_3;)
+A8 data8(_Calibrate_LSensors_PARM_3;0x0001;+;)
+A9 data8(_Calibrate_LSensors_PARM_3;0x0002;+;)
+8F 82
+88 83
+89 F0
+12 addr16(__gptrget;)  
+FA
+A3
+12 addr16(__gptrget;)  
+FB
+EA
+C3
+9D
+F5 82
+EB
+9E
+F5 83
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+12 addr16(_abs;)  
+AA 82
+AB 83
+D0 01
+D0 00
+D0 07
+D0 06
+D0 05
+C3
+74 32
+9A
+E4
+64 80
+8B F0
+63 F0 80
+95 F0
+40 rel2(L017009?;)
+90 data16(_Calibrate_LSensors_countR_1_108;)  
+E0
+24 01
+F0
+A3
+E0
+34 00
+F0
+80 rel2(L017010?;)
+90 data16(_Calibrate_LSensors_countR_1_108;)  
+E4
+F0
+A3
+F0
+8F 82
+88 83
+89 F0
+ED
+12 addr16(__gptrput;)  
+A3
+EE
+12 addr16(__gptrput;)  
+90 data16(_Calibrate_LSensors_countR_1_108;)  
+E0
+FA
+A3
+E0
+FB
+BA 0A rel3(L017014?;)
+BB 00 rel3(L017014?;)
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+E0
+FA
+A3
+E0
+FB
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+74 01
+4A
+F0
+A3
+EB
+F0
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+E0
+FA
+A3
+E0
+53 02 04
+7B 00
+BA 04 rel3(L017047?;)
+BB 00 rel3(L017047?;)
+02 addr16(L017022?;)  
+75 82 0B
+12 addr16(_Volts_at_Pin;)  
+AA 82
+AB 83
+AC F0
+FD
+C0 02
+C0 03
+C0 04
+C0 05
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AA 82
+AB 83
+AC F0
+FD
+E5 81
+24 FC
+F5 81
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fs2uint;)  
+AA 82
+AB 83
+AC data8(_Calibrate_LSensors_PARM_2;)
+AD data8(_Calibrate_LSensors_PARM_2;0x0001;+;)
+AE data8(_Calibrate_LSensors_PARM_2;0x0002;+;)
+8C 82
+8D 83
+8E F0
+12 addr16(__gptrget;)  
+FF
+A3
+12 addr16(__gptrget;)  
+F8
+EF
+C3
+9A
+F5 82
+E8
+9B
+F5 83
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+12 addr16(_abs;)  
+AF 82
+A8 83
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+C3
+74 32
+9F
+E4
+64 80
+88 F0
+63 F0 80
+95 F0
+40 rel2(L017016?;)
+90 data16(_Calibrate_LSensors_countM_1_108;)  
+E0
+24 01
+F0
+A3
+E0
+34 00
+F0
+80 rel2(L017017?;)
+90 data16(_Calibrate_LSensors_countM_1_108;)  
+E4
+F0
+A3
+F0
+8C 82
+8D 83
+8E F0
+EA
+12 addr16(__gptrput;)  
+A3
+EB
+12 addr16(__gptrput;)  
+90 data16(_Calibrate_LSensors_countM_1_108;)  
+E0
+FA
+A3
+E0
+FB
+BA 0A rel3(L017049?;)
+BB 00 rel3(L017049?;)
+80 rel2(L017050?;)
+02 addr16(L017022?;)  
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+E0
+FA
+A3
+E0
+FB
+90 data16(_Calibrate_LSensors_flags_1_108;)  
+74 04
+4A
+F0
+A3
+EB
+F0
+02 addr16(L017022?;)  
+22
+85 82 data8(_Follow_Tape_gnd_VL_1_119;)
+85 83 data8(_Follow_Tape_gnd_VL_1_119;0x0001;+;)
+85 F0 data8(_Follow_Tape_gnd_VL_1_119;0x0002;+;)
+12 addr16(__gptrget;)  
+FD
+A3
+12 addr16(__gptrget;)  
+FE
+ED
+24 70
+FD
+EE
+34 FE
+FE
+85 data8(_Follow_Tape_PARM_3;) data8(_Follow_Tape_sloc1_1_0;)
+85 data8(_Follow_Tape_PARM_3;0x0001;+;) data8(_Follow_Tape_sloc1_1_0;0x0001;+;)
+85 data8(_Follow_Tape_PARM_3;0x0002;+;) data8(_Follow_Tape_sloc1_1_0;0x0002;+;)
+85 data8(_Follow_Tape_sloc1_1_0;) 82
+85 data8(_Follow_Tape_sloc1_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc1_1_0;0x0002;+;) F0
+12 addr16(__gptrget;)  
+FA
+A3
+12 addr16(__gptrget;)  
+FB
+EA
+24 70
+FA
+EB
+34 FE
+FB
+85 data8(_Follow_Tape_PARM_2;) data8(_Follow_Tape_sloc0_1_0;)
+85 data8(_Follow_Tape_PARM_2;0x0001;+;) data8(_Follow_Tape_sloc0_1_0;0x0001;+;)
+85 data8(_Follow_Tape_PARM_2;0x0002;+;) data8(_Follow_Tape_sloc0_1_0;0x0002;+;)
+85 data8(_Follow_Tape_sloc0_1_0;) 82
+85 data8(_Follow_Tape_sloc0_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc0_1_0;0x0002;+;) F0
+12 addr16(__gptrget;)  
+FC
+A3
+12 addr16(__gptrget;)  
+FF
+EC
+24 70
+FC
+EF
+34 FE
+FF
+90 data16(_pwmL;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 19
+F0
+E4
+A3
+F0
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+F5 82
+F5 83
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+12 addr16(_mot_dir;)  
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+D2 bit(_dir_flag;)
+90 data16(_dir_count;)  
+E4
+F0
+A3
+F0
+C0 05
+C0 06
+75 82 0B
+C0 02
+C0 03
+C0 04
+C0 07
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AD F0
+FE
+C0 00
+C0 01
+C0 05
+C0 06
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AD 82
+AE 83
+A8 F0
+F9
+E5 81
+24 FC
+F5 81
+D0 07
+D0 04
+8C 82
+8F 83
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+12 addr16(___uint2fs;)  
+85 82 data8(_Follow_Tape_sloc2_1_0;)
+85 83 data8(_Follow_Tape_sloc2_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc2_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc2_1_0;0x0003;+;)
+D0 01
+D0 00
+D0 07
+D0 06
+D0 05
+C0 06
+C0 07
+C0 data8(_Follow_Tape_sloc2_1_0;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0001;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0002;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0003;+;)
+8D 82
+8E 83
+88 F0
+E9
+12 addr16(___fsgt;)  
+AD 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 04
+D0 03
+D0 02
+ED
+D0 06
+D0 05
+70 rel2(L018091?;)
+02 addr16(L018030?;)  
+C0 04
+C0 07
+75 82 0C
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+D0 06
+D0 05
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Follow_Tape_sloc3_1_0;)
+85 83 data8(_Follow_Tape_sloc3_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc3_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc3_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 04
+8D 82
+8E 83
+C0 05
+C0 06
+12 addr16(___uint2fs;)  
+AC 82
+AF 83
+A8 F0
+F9
+C0 07
+C0 04
+C0 07
+C0 00
+C0 01
+85 data8(_Follow_Tape_sloc3_1_0;) 82
+85 data8(_Follow_Tape_sloc3_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc3_1_0;0x0002;+;) F0
+E5 data8(_Follow_Tape_sloc3_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+60 rel2(L018015?;)
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 01
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+12 addr16(_mot_dir;)  
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+90 data16(_pwmR;)  
+74 28
+F0
+E4
+A3
+F0
+90 data16(_pwmL;)  
+74 28
+F0
+E4
+A3
+F0
+30 bit(_dir_flag;) rel3(L018093?;)
+02 addr16(L018031?;)  
+90 data16(_dir_count;)  
+E0
+F8
+A3
+E0
+F9
+30 E7 rel3(L018002?;)
+90 data16(_dir_count;)  
+74 01
+F0
+E4
+A3
+F0
+80 rel2(L018003?;)
+90 data16(_dir_count;)  
+E0
+24 01
+F0
+A3
+E0
+34 00
+F0
+D2 bit(_dir_flag;)
+02 addr16(L018031?;)  
+C0 04
+C0 07
+75 82 0A
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+D0 06
+D0 05
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Follow_Tape_sloc3_1_0;)
+85 83 data8(_Follow_Tape_sloc3_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc3_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc3_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+8A 82
+8B 83
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(___uint2fs;)  
+AC 82
+AF 83
+A8 F0
+F9
+C0 07
+C0 04
+C0 07
+C0 00
+C0 01
+85 data8(_Follow_Tape_sloc3_1_0;) 82
+85 data8(_Follow_Tape_sloc3_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc3_1_0;0x0002;+;) F0
+E5 data8(_Follow_Tape_sloc3_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+60 rel2(L018012?;)
+75 data8(_mot_dir_PARM_2;) 01
+E4
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 00
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+12 addr16(_mot_dir;)  
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+90 data16(_pwmL;)  
+74 28
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 28
+F0
+E4
+A3
+F0
+30 bit(_dir_flag;) rel3(L018096?;)
+02 addr16(L018031?;)  
+90 data16(_dir_count;)  
+E0
+F8
+A3
+E0
+F9
+C3
+E4
+98
+E4
+64 80
+89 F0
+63 F0 80
+95 F0
+50 rel2(L018007?;)
+90 data16(_dir_count;)  
+74 FF
+F0
+A3
+F0
+80 rel2(L018008?;)
+90 data16(_dir_count;)  
+E0
+24 FF
+F8
+A3
+E0
+34 FF
+F9
+90 data16(_dir_count;)  
+E8
+F0
+A3
+E9
+F0
+D2 bit(_dir_flag;)
+02 addr16(L018031?;)  
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+F5 82
+F5 83
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+12 addr16(_mot_dir;)  
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+90 data16(_pwmL;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 19
+F0
+E4
+A3
+F0
+02 addr16(L018031?;)  
+C0 04
+C0 07
+75 82 0C
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AC 82
+AF 83
+A8 F0
+F9
+E5 81
+24 FC
+F5 81
+D0 06
+D0 05
+8D 82
+8E 83
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+12 addr16(___uint2fs;)  
+85 82 data8(_Follow_Tape_sloc3_1_0;)
+85 83 data8(_Follow_Tape_sloc3_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc3_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc3_1_0;0x0003;+;)
+D0 01
+D0 00
+D0 07
+D0 06
+D0 05
+D0 04
+C0 05
+C0 06
+C0 07
+C0 data8(_Follow_Tape_sloc3_1_0;)
+C0 data8(_Follow_Tape_sloc3_1_0;0x0001;+;)
+C0 data8(_Follow_Tape_sloc3_1_0;0x0002;+;)
+C0 data8(_Follow_Tape_sloc3_1_0;0x0003;+;)
+8C 82
+8F 83
+88 F0
+E9
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+70 rel2(L018098?;)
+02 addr16(L018024?;)  
+C0 04
+C0 07
+75 82 0A
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+D0 06
+D0 05
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Follow_Tape_sloc4_1_0;)
+85 83 data8(_Follow_Tape_sloc4_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc4_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+8A 82
+8B 83
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(___uint2fs;)  
+AC 82
+AF 83
+A8 F0
+F9
+C0 07
+C0 04
+C0 07
+C0 00
+C0 01
+85 data8(_Follow_Tape_sloc4_1_0;) 82
+85 data8(_Follow_Tape_sloc4_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc4_1_0;0x0002;+;) F0
+E5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+70 rel2(L018099?;)
+02 addr16(L018024?;)  
+C0 04
+C0 07
+75 82 0B
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AC 82
+AF 83
+A8 F0
+F9
+E5 81
+24 FC
+F5 81
+C0 07
+C0 data8(_Follow_Tape_sloc2_1_0;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0001;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0002;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0003;+;)
+8C 82
+8F 83
+88 F0
+E9
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+60 rel2(L018024?;)
+10 bit(_find_circle2_flag;) rel3(L018101?;)
+80 rel2(L018024?;)
+C2 bit(_find_circle1_flag;)
+90 07 D0
+12 addr16(_waitms;)  
+12 addr16(_stop;)  
+90 00 0A
+12 addr16(_Claw_Pos;)  
+90 01 F4
+02 addr16(_waitms;)  
+C0 04
+C0 07
+75 82 0C
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AC 82
+AF 83
+A8 F0
+F9
+E5 81
+24 FC
+F5 81
+C0 07
+C0 data8(_Follow_Tape_sloc3_1_0;)
+C0 data8(_Follow_Tape_sloc3_1_0;0x0001;+;)
+C0 data8(_Follow_Tape_sloc3_1_0;0x0002;+;)
+C0 data8(_Follow_Tape_sloc3_1_0;0x0003;+;)
+8C 82
+8F 83
+88 F0
+E9
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+70 rel2(L018102?;)
+02 addr16(L018018?;)  
+C0 04
+C0 07
+75 82 0A
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+D0 06
+D0 05
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Follow_Tape_sloc4_1_0;)
+85 83 data8(_Follow_Tape_sloc4_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc4_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+8A 82
+8B 83
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(___uint2fs;)  
+AC 82
+AF 83
+A8 F0
+F9
+C0 07
+C0 04
+C0 07
+C0 00
+C0 01
+85 data8(_Follow_Tape_sloc4_1_0;) 82
+85 data8(_Follow_Tape_sloc4_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc4_1_0;0x0002;+;) F0
+E5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+60 rel2(L018018?;)
+C0 04
+C0 07
+75 82 0B
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AC 82
+AF 83
+A8 F0
+F9
+E5 81
+24 FC
+F5 81
+C0 07
+C0 data8(_Follow_Tape_sloc2_1_0;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0001;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0002;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0003;+;)
+8C 82
+8F 83
+88 F0
+E9
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+60 rel2(L018018?;)
+10 bit(_find_circle1_flag;) rel3(L018105?;)
+80 rel2(L018018?;)
+C2 bit(_find_circle2_flag;)
+22
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+F5 82
+F5 83
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+12 addr16(_mot_dir;)  
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+90 data16(_pwmL;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_dir_count;)  
+E0
+F8
+A3
+E0
+F9
+C3
+E8
+94 07
+E9
+64 80
+94 80
+40 rel2(L018033?;)
+D2 bit(_dir;)
+90 data16(_dir_count;)  
+E0
+F8
+A3
+E0
+F9
+C3
+74 F9
+98
+74 7F
+89 F0
+63 F0 80
+95 F0
+40 rel2(L018035?;)
+C2 bit(_dir;)
+20 bit(_find_bridge_flag;) rel3(L018108?;)
+02 addr16(L018055?;)  
+20 bit(_dir;) rel3(L018109?;)
+02 addr16(L018040?;)  
+C0 04
+C0 07
+75 82 0A
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+D0 06
+D0 05
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Follow_Tape_sloc4_1_0;)
+85 83 data8(_Follow_Tape_sloc4_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc4_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+8A 82
+8B 83
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(___uint2fs;)  
+AC 82
+AF 83
+A8 F0
+F9
+C0 07
+C0 04
+C0 07
+C0 00
+C0 01
+85 data8(_Follow_Tape_sloc4_1_0;) 82
+85 data8(_Follow_Tape_sloc4_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc4_1_0;0x0002;+;) F0
+E5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+70 rel2(L018110?;)
+02 addr16(L018040?;)  
+C0 04
+C0 07
+75 82 0B
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AC 82
+AF 83
+A8 F0
+F9
+E5 81
+24 FC
+F5 81
+C0 07
+C0 data8(_Follow_Tape_sloc2_1_0;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0001;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0002;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0003;+;)
+8C 82
+8F 83
+88 F0
+E9
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+60 rel2(L018040?;)
+C2 bit(_find_bridge_flag;)
+85 data8(_Follow_Tape_sloc0_1_0;) data8(_Bridge_Rotate_PARM_2;)
+85 data8(_Follow_Tape_sloc0_1_0;0x0001;+;) data8(_Bridge_Rotate_PARM_2;0x0001;+;)
+85 data8(_Follow_Tape_sloc0_1_0;0x0002;+;) data8(_Bridge_Rotate_PARM_2;0x0002;+;)
+85 data8(_Follow_Tape_sloc1_1_0;) data8(_Bridge_Rotate_PARM_3;)
+85 data8(_Follow_Tape_sloc1_1_0;0x0001;+;) data8(_Bridge_Rotate_PARM_3;0x0001;+;)
+85 data8(_Follow_Tape_sloc1_1_0;0x0002;+;) data8(_Bridge_Rotate_PARM_3;0x0002;+;)
+85 data8(_Follow_Tape_gnd_VL_1_119;) 82
+85 data8(_Follow_Tape_gnd_VL_1_119;0x0001;+;) 83
+85 data8(_Follow_Tape_gnd_VL_1_119;0x0002;+;) F0
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+12 addr16(_Bridge_Rotate;)  
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+30 bit(_circ2;) rel3(L018037?;)
+D2 bit(_find_circle2_flag;)
+80 rel2(L018040?;)
+D2 bit(_find_circle1_flag;)
+30 bit(_dir;) rel3(L018113?;)
+02 addr16(L018058?;)  
+C0 04
+C0 07
+75 82 0C
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+D0 06
+D0 05
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Follow_Tape_sloc4_1_0;)
+85 83 data8(_Follow_Tape_sloc4_1_0;0x0001;+;)
+85 F0 data8(_Follow_Tape_sloc4_1_0;0x0002;+;)
+F5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 04
+8D 82
+8E 83
+C0 05
+C0 06
+12 addr16(___uint2fs;)  
+AC 82
+AF 83
+A8 F0
+F9
+C0 07
+C0 04
+C0 07
+C0 00
+C0 01
+85 data8(_Follow_Tape_sloc4_1_0;) 82
+85 data8(_Follow_Tape_sloc4_1_0;0x0001;+;) 83
+85 data8(_Follow_Tape_sloc4_1_0;0x0002;+;) F0
+E5 data8(_Follow_Tape_sloc4_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+70 rel2(L018114?;)
+02 addr16(L018058?;)  
+C0 04
+C0 07
+75 82 0B
+C0 02
+C0 03
+C0 05
+C0 06
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AC F0
+FF
+C0 00
+C0 01
+C0 04
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AC 82
+AF 83
+A8 F0
+F9
+E5 81
+24 FC
+F5 81
+C0 07
+C0 data8(_Follow_Tape_sloc2_1_0;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0001;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0002;+;)
+C0 data8(_Follow_Tape_sloc2_1_0;0x0003;+;)
+8C 82
+8F 83
+88 F0
+E9
+12 addr16(___fslt;)  
+AC 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 03
+D0 02
+EC
+D0 07
+D0 04
+70 rel2(L018115?;)
+02 addr16(L018058?;)  
+C2 bit(_find_bridge_flag;)
+85 data8(_Follow_Tape_sloc0_1_0;) data8(_Bridge_Rotate_PARM_2;)
+85 data8(_Follow_Tape_sloc0_1_0;0x0001;+;) data8(_Bridge_Rotate_PARM_2;0x0001;+;)
+85 data8(_Follow_Tape_sloc0_1_0;0x0002;+;) data8(_Bridge_Rotate_PARM_2;0x0002;+;)
+85 data8(_Follow_Tape_sloc1_1_0;) data8(_Bridge_Rotate_PARM_3;)
+85 data8(_Follow_Tape_sloc1_1_0;0x0001;+;) data8(_Bridge_Rotate_PARM_3;0x0001;+;)
+85 data8(_Follow_Tape_sloc1_1_0;0x0002;+;) data8(_Bridge_Rotate_PARM_3;0x0002;+;)
+85 data8(_Follow_Tape_gnd_VL_1_119;) 82
+85 data8(_Follow_Tape_gnd_VL_1_119;0x0001;+;) 83
+85 data8(_Follow_Tape_gnd_VL_1_119;0x0002;+;) F0
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+12 addr16(_Bridge_Rotate;)  
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+30 bit(_circ2;) rel3(L018044?;)
+D2 bit(_find_circle2_flag;)
+02 addr16(L018058?;)  
+D2 bit(_find_circle1_flag;)
+02 addr16(L018058?;)  
+90 data16(_dir_count;)  
+E0
+F8
+A3
+E0
+F9
+C3
+E8
+94 0F
+E9
+64 80
+94 80
+50 rel2(L018050?;)
+90 data16(_dir_count;)  
+E0
+F8
+A3
+E0
+F9
+C3
+74 F1
+98
+74 7F
+89 F0
+63 F0 80
+95 F0
+50 rel2(L018118?;)
+02 addr16(L018058?;)  
+20 bit(_break_when_dir_found;) rel3(L018119?;)
+02 addr16(L018058?;)  
+C2 bit(_break_when_dir_found;)
+22
+C2 bit(_Track_Object_flag_1_136;)
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+F5 82
+F5 83
+12 addr16(_mot_dir;)  
+30 bit(_Track_Object_flag_1_136;) rel3(L019038?;)
+02 addr16(L019023?;)  
+75 82 08
+12 addr16(_Volts_at_Pin;)  
+AA 82
+AB 83
+AC F0
+FD
+C0 02
+C0 03
+C0 04
+C0 05
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AA 82
+AB 83
+AC F0
+FD
+E5 81
+24 FC
+F5 81
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fs2uint;)  
+AA 82
+AB 83
+75 82 09
+C0 02
+C0 03
+12 addr16(_Volts_at_Pin;)  
+AC 82
+AD 83
+AE F0
+FF
+C0 04
+C0 05
+C0 06
+C0 07
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AC 82
+AD 83
+AE F0
+FF
+E5 81
+24 FC
+F5 81
+8C 82
+8D 83
+8E F0
+EF
+12 addr16(___fs2uint;)  
+AC 82
+AD 83
+D0 03
+D0 02
+C3
+74 E8
+9A
+74 03
+9B
+E4
+33
+FE
+60 rel2(L019016?;)
+C3
+EC
+94 E8
+ED
+94 03
+50 rel2(L019016?;)
+90 data16(_pwmL;)  
+74 05
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 28
+F0
+E4
+A3
+F0
+02 addr16(L019017?;)  
+C3
+74 E8
+9C
+74 03
+9D
+E4
+33
+FF
+60 rel2(L019012?;)
+C3
+EA
+94 E8
+EB
+94 03
+50 rel2(L019012?;)
+90 data16(_pwmL;)  
+74 28
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 05
+F0
+E4
+A3
+F0
+80 rel2(L019017?;)
+EF
+60 rel2(L019008?;)
+EE
+60 rel2(L019008?;)
+12 addr16(_Distance;)  
+AE 82
+AF 83
+A8 F0
+F9
+E4
+C0 E0
+C0 E0
+74 20
+C0 E0
+74 42
+C0 E0
+8E 82
+8F 83
+88 F0
+E9
+12 addr16(___fslt;)  
+AE 82
+E5 81
+24 FC
+F5 81
+EE
+60 rel2(L019002?;)
+90 data16(_pwmL;)  
+74 28
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 28
+F0
+E4
+A3
+F0
+80 rel2(L019017?;)
+90 data16(_pwmL;)  
+E4
+F0
+A3
+F0
+90 data16(_pwmR;)  
+E4
+F0
+A3
+F0
+80 rel2(L019017?;)
+C3
+EC
+94 E8
+ED
+94 03
+50 rel2(L019017?;)
+C3
+EA
+94 E8
+EB
+94 03
+50 rel2(L019017?;)
+90 data16(_pwmL;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 19
+F0
+E4
+A3
+F0
+12 addr16(_Distance;)  
+AA 82
+AB 83
+AC F0
+FD
+E4
+C0 E0
+C0 E0
+74 80
+C0 E0
+74 40
+C0 E0
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+70 rel2(L019048?;)
+02 addr16(L019021?;)  
+D2 bit(_Track_Object_flag_1_136;)
+02 addr16(L019021?;)  
+90 data16(_pwmL;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 19
+F0
+E4
+A3
+F0
+90 01 F4
+12 addr16(_waitms;)  
+12 addr16(_stop;)  
+90 00 02
+12 addr16(_Claw_Pos;)  
+90 01 F4
+02 addr16(_waitms;)  
+85 82 data8(_Find_Tape_gnd_VM_1_144;)
+85 83 data8(_Find_Tape_gnd_VM_1_144;0x0001;+;)
+85 F0 data8(_Find_Tape_gnd_VM_1_144;0x0002;+;)
+C2 bit(_Find_Tape_flag_1_145;)
+30 bit(_Find_Tape_flag_1_145;) rel3(L020012?;)
+02 addr16(L020006?;)  
+75 82 0B
+12 addr16(_Volts_at_Pin;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AD 82
+AE 83
+AF F0
+F8
+E5 81
+24 FC
+F5 81
+85 data8(_Find_Tape_gnd_VM_1_144;) 82
+85 data8(_Find_Tape_gnd_VM_1_144;0x0001;+;) 83
+85 data8(_Find_Tape_gnd_VM_1_144;0x0002;+;) F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FA
+E9
+24 70
+F5 82
+EA
+34 FE
+F5 83
+C0 05
+C0 06
+C0 07
+C0 00
+12 addr16(___uint2fs;)  
+AA 82
+AB 83
+AC F0
+F9
+D0 00
+D0 07
+D0 06
+D0 05
+C0 02
+C0 03
+C0 04
+C0 01
+8D 82
+8E 83
+8F F0
+E8
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+60 rel2(L020002?;)
+12 addr16(_stop;)  
+D2 bit(_Find_Tape_flag_1_145;)
+02 addr16(L020004?;)  
+85 data8(_Find_Tape_PARM_2;) data8(_mot_dir_PARM_2;)
+85 data8(_Find_Tape_PARM_2;0x0001;+;) data8(_mot_dir_PARM_2;0x0001;+;)
+85 data8(_Find_Tape_PARM_2;) 82
+85 data8(_Find_Tape_PARM_2;0x0001;+;) 83
+12 addr16(_mot_dir;)  
+90 data16(_pwmL;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 19
+F0
+E4
+A3
+F0
+02 addr16(L020004?;)  
+22
+85 82 data8(_Rotate_gnd_VL_1_149;)
+85 83 data8(_Rotate_gnd_VL_1_149;0x0001;+;)
+85 F0 data8(_Rotate_gnd_VL_1_149;0x0002;+;)
+75 82 0C
+12 addr16(_Volts_at_Pin;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AD 82
+AE 83
+AF F0
+F8
+E5 81
+24 FC
+F5 81
+85 data8(_Rotate_gnd_VL_1_149;) 82
+85 data8(_Rotate_gnd_VL_1_149;0x0001;+;) 83
+85 data8(_Rotate_gnd_VL_1_149;0x0002;+;) F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FA
+E9
+24 70
+F5 82
+EA
+34 FE
+F5 83
+C0 05
+C0 06
+C0 07
+C0 00
+12 addr16(___uint2fs;)  
+AA 82
+AB 83
+AC F0
+F9
+D0 00
+D0 07
+D0 06
+D0 05
+C0 02
+C0 03
+C0 04
+C0 01
+8D 82
+8E 83
+8F F0
+E8
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+60 rel2(L021004?;)
+90 00 0A
+12 addr16(_spin_left;)  
+02 addr16(L021015?;)  
+75 82 0A
+12 addr16(_Volts_at_Pin;)  
+AA 82
+AB 83
+AC F0
+FD
+C0 02
+C0 03
+C0 04
+C0 05
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AA 82
+AB 83
+AC F0
+FD
+E5 81
+24 FC
+F5 81
+AE data8(_Rotate_PARM_2;)
+AF data8(_Rotate_PARM_2;0x0001;+;)
+A8 data8(_Rotate_PARM_2;0x0002;+;)
+8E 82
+8F 83
+88 F0
+12 addr16(__gptrget;)  
+FE
+A3
+12 addr16(__gptrget;)  
+FF
+EE
+24 70
+F5 82
+EF
+34 FE
+F5 83
+C0 02
+C0 03
+C0 04
+C0 05
+12 addr16(___uint2fs;)  
+AE 82
+AF 83
+A8 F0
+F9
+D0 05
+D0 04
+D0 03
+D0 02
+C0 06
+C0 07
+C0 00
+C0 01
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+60 rel2(L021015?;)
+90 00 0A
+12 addr16(_spin_right;)  
+85 data8(_Rotate_PARM_2;) data8(_Rotate_sloc0_1_0;)
+85 data8(_Rotate_PARM_2;0x0001;+;) data8(_Rotate_sloc0_1_0;0x0001;+;)
+85 data8(_Rotate_PARM_2;0x0002;+;) data8(_Rotate_sloc0_1_0;0x0002;+;)
+75 82 0C
+12 addr16(_Volts_at_Pin;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AD 82
+AE 83
+AF F0
+F8
+E5 81
+24 FC
+F5 81
+85 data8(_Rotate_gnd_VL_1_149;) 82
+85 data8(_Rotate_gnd_VL_1_149;0x0001;+;) 83
+85 data8(_Rotate_gnd_VL_1_149;0x0002;+;) F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FA
+E9
+24 70
+F5 82
+EA
+34 FE
+F5 83
+C0 05
+C0 06
+C0 07
+C0 00
+12 addr16(___uint2fs;)  
+AA 82
+AB 83
+AC F0
+F9
+D0 00
+D0 07
+D0 06
+D0 05
+C0 02
+C0 03
+C0 04
+C0 01
+8D 82
+8E 83
+8F F0
+E8
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+70 rel2(L021018?;)
+02 addr16(L021009?;)  
+75 82 0A
+12 addr16(_Volts_at_Pin;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AD 82
+AE 83
+AF F0
+F8
+E5 81
+24 FC
+F5 81
+85 data8(_Rotate_sloc0_1_0;) 82
+85 data8(_Rotate_sloc0_1_0;0x0001;+;) 83
+85 data8(_Rotate_sloc0_1_0;0x0002;+;) F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FA
+E9
+24 70
+F5 82
+EA
+34 FE
+F5 83
+C0 05
+C0 06
+C0 07
+C0 00
+12 addr16(___uint2fs;)  
+AA 82
+AB 83
+AC F0
+F9
+D0 00
+D0 07
+D0 06
+D0 05
+C0 02
+C0 03
+C0 04
+C0 01
+8D 82
+8E 83
+8F F0
+E8
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+60 rel2(L021019?;)
+02 addr16(L021007?;)  
+22
+75 82 08
+12 addr16(_Volts_at_Pin;)  
+AA 82
+AB 83
+AC F0
+FD
+C0 02
+C0 03
+C0 04
+C0 05
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AA 82
+AB 83
+AC F0
+FD
+E5 81
+24 FC
+F5 81
+E4
+C0 E0
+C0 E0
+74 7A
+C0 E0
+74 44
+C0 E0
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+70 rel2(L022001?;)
+75 82 09
+12 addr16(_Volts_at_Pin;)  
+AA 82
+AB 83
+AC F0
+FD
+C0 02
+C0 03
+C0 04
+C0 05
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AA 82
+AB 83
+AC F0
+FD
+E5 81
+24 FC
+F5 81
+E4
+C0 E0
+C0 E0
+74 7A
+C0 E0
+74 44
+C0 E0
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+60 rel2(L022002?;)
+90 00 01
+22
+12 addr16(_Distance;)  
+AA 82
+AB 83
+AC F0
+FD
+E4
+C0 E0
+C0 E0
+74 20
+C0 E0
+74 42
+C0 E0
+8A 82
+8B 83
+8C F0
+ED
+12 addr16(___fsgt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+EA
+70 rel2(L022005?;)
+90 00 01
+22
+90 00 00
+22
+90 00 0A
+12 addr16(_Claw_Pos;)  
+12 addr16(_stop;)  
+90 01 F4
+12 addr16(_waitms;)  
+30 bit(_dir;) rel3(L023002?;)
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 01
+12 addr16(_mot_dir;)  
+90 data16(_pwmR;)  
+E4
+F0
+A3
+F0
+90 data16(_pwmL;)  
+74 19
+F0
+E4
+A3
+F0
+80 rel2(L023004?;)
+75 data8(_mot_dir_PARM_2;) 01
+E4
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 00
+12 addr16(_mot_dir;)  
+90 data16(_pwmR;)  
+74 19
+F0
+E4
+A3
+F0
+90 data16(_pwmL;)  
+E4
+F0
+A3
+F0
+12 addr16(_Detect_Object;)  
+AA 82
+AB 83
+BA 01 rel3(L023004?;)
+BB 00 rel3(L023004?;)
+22
+85 82 data8(_Bridge_Rotate_gnd_VL_1_159;)
+85 83 data8(_Bridge_Rotate_gnd_VL_1_159;0x0001;+;)
+85 F0 data8(_Bridge_Rotate_gnd_VL_1_159;0x0002;+;)
+20 bit(_dir;) rel3(L024021?;)
+02 addr16(L024010?;)  
+75 data8(_mot_dir_PARM_2;) 01
+E4
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 00
+12 addr16(_mot_dir;)  
+90 data16(_pwmL;)  
+74 23
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 23
+F0
+E4
+A3
+F0
+90 02 BC
+12 addr16(_waitms;)  
+85 data8(_Bridge_Rotate_PARM_3;) data8(_Bridge_Rotate_sloc1_1_0;)
+85 data8(_Bridge_Rotate_PARM_3;0x0001;+;) data8(_Bridge_Rotate_sloc1_1_0;0x0001;+;)
+85 data8(_Bridge_Rotate_PARM_3;0x0002;+;) data8(_Bridge_Rotate_sloc1_1_0;0x0002;+;)
+85 data8(_Bridge_Rotate_PARM_2;) data8(_Bridge_Rotate_sloc0_1_0;)
+85 data8(_Bridge_Rotate_PARM_2;0x0001;+;) data8(_Bridge_Rotate_sloc0_1_0;0x0001;+;)
+85 data8(_Bridge_Rotate_PARM_2;0x0002;+;) data8(_Bridge_Rotate_sloc0_1_0;0x0002;+;)
+75 82 0A
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AD F0
+FE
+C0 00
+C0 01
+C0 05
+C0 06
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Bridge_Rotate_sloc2_1_0;)
+85 83 data8(_Bridge_Rotate_sloc2_1_0;0x0001;+;)
+85 F0 data8(_Bridge_Rotate_sloc2_1_0;0x0002;+;)
+F5 data8(_Bridge_Rotate_sloc2_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+85 data8(_Bridge_Rotate_sloc1_1_0;) 82
+85 data8(_Bridge_Rotate_sloc1_1_0;0x0001;+;) 83
+85 data8(_Bridge_Rotate_sloc1_1_0;0x0002;+;) F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FD
+E9
+24 70
+F5 82
+ED
+34 FE
+F5 83
+12 addr16(___uint2fs;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+85 data8(_Bridge_Rotate_sloc2_1_0;) 82
+85 data8(_Bridge_Rotate_sloc2_1_0;0x0001;+;) 83
+85 data8(_Bridge_Rotate_sloc2_1_0;0x0002;+;) F0
+E5 data8(_Bridge_Rotate_sloc2_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AD 82
+E5 81
+24 FC
+F5 81
+ED
+70 rel2(L024002?;)
+75 82 0B
+12 addr16(_Volts_at_Pin;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Bridge_Rotate_sloc2_1_0;)
+85 83 data8(_Bridge_Rotate_sloc2_1_0;0x0001;+;)
+85 F0 data8(_Bridge_Rotate_sloc2_1_0;0x0002;+;)
+F5 data8(_Bridge_Rotate_sloc2_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+85 data8(_Bridge_Rotate_sloc0_1_0;) 82
+85 data8(_Bridge_Rotate_sloc0_1_0;0x0001;+;) 83
+85 data8(_Bridge_Rotate_sloc0_1_0;0x0002;+;) F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FD
+E9
+24 70
+F5 82
+ED
+34 FE
+F5 83
+12 addr16(___uint2fs;)  
+AD 82
+AE 83
+AF F0
+F8
+C0 05
+C0 06
+C0 07
+C0 00
+85 data8(_Bridge_Rotate_sloc2_1_0;) 82
+85 data8(_Bridge_Rotate_sloc2_1_0;0x0001;+;) 83
+85 data8(_Bridge_Rotate_sloc2_1_0;0x0002;+;) F0
+E5 data8(_Bridge_Rotate_sloc2_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AD 82
+E5 81
+24 FC
+F5 81
+ED
+60 rel2(L024023?;)
+02 addr16(L024002?;)  
+E4
+F5 data8(_Find_Tape_PARM_2;)
+F5 data8(_Find_Tape_PARM_2;0x0001;+;)
+85 data8(_Bridge_Rotate_sloc0_1_0;) 82
+85 data8(_Bridge_Rotate_sloc0_1_0;0x0001;+;) 83
+85 data8(_Bridge_Rotate_sloc0_1_0;0x0002;+;) F0
+02 addr16(_Find_Tape;)  
+E4
+F5 data8(_mot_dir_PARM_2;)
+F5 data8(_mot_dir_PARM_2;0x0001;+;)
+90 00 01
+12 addr16(_mot_dir;)  
+90 data16(_pwmL;)  
+74 23
+F0
+E4
+A3
+F0
+90 data16(_pwmR;)  
+74 23
+F0
+E4
+A3
+F0
+90 02 BC
+12 addr16(_waitms;)  
+AD data8(_Bridge_Rotate_PARM_2;)
+AE data8(_Bridge_Rotate_PARM_2;0x0001;+;)
+AF data8(_Bridge_Rotate_PARM_2;0x0002;+;)
+C0 05
+C0 06
+C0 07
+75 82 0C
+C0 05
+C0 06
+C0 07
+12 addr16(_Volts_at_Pin;)  
+A8 82
+A9 83
+AA F0
+FB
+C0 00
+C0 01
+C0 02
+C0 03
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+AA 82
+AB 83
+AC F0
+F8
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+85 data8(_Bridge_Rotate_gnd_VL_1_159;) 82
+85 data8(_Bridge_Rotate_gnd_VL_1_159;0x0001;+;) 83
+85 data8(_Bridge_Rotate_gnd_VL_1_159;0x0002;+;) F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FD
+E9
+24 70
+F5 82
+ED
+34 FE
+F5 83
+C0 02
+C0 03
+C0 04
+C0 00
+12 addr16(___uint2fs;)  
+AD 82
+AE 83
+AF F0
+F9
+D0 00
+D0 04
+D0 03
+D0 02
+C0 05
+C0 06
+C0 07
+C0 05
+C0 06
+C0 07
+C0 01
+8A 82
+8B 83
+8C F0
+E8
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+D0 07
+D0 06
+D0 05
+EA
+60 rel2(L024024?;)
+02 addr16(L024006?;)  
+75 82 0B
+C0 05
+C0 06
+C0 07
+12 addr16(_Volts_at_Pin;)  
+AA 82
+AB 83
+AC F0
+F8
+C0 02
+C0 03
+C0 04
+C0 00
+90 00 00
+75 F0 7A
+74 44
+12 addr16(___fsmul;)  
+85 82 data8(_Bridge_Rotate_sloc2_1_0;)
+85 83 data8(_Bridge_Rotate_sloc2_1_0;0x0001;+;)
+85 F0 data8(_Bridge_Rotate_sloc2_1_0;0x0002;+;)
+F5 data8(_Bridge_Rotate_sloc2_1_0;0x0003;+;)
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+8D 82
+8E 83
+8F F0
+12 addr16(__gptrget;)  
+F9
+A3
+12 addr16(__gptrget;)  
+FA
+E9
+24 70
+F5 82
+EA
+34 FE
+F5 83
+C0 05
+C0 06
+C0 07
+12 addr16(___uint2fs;)  
+AA 82
+AB 83
+AC F0
+F8
+C0 02
+C0 03
+C0 04
+C0 00
+85 data8(_Bridge_Rotate_sloc2_1_0;) 82
+85 data8(_Bridge_Rotate_sloc2_1_0;0x0001;+;) 83
+85 data8(_Bridge_Rotate_sloc2_1_0;0x0002;+;) F0
+E5 data8(_Bridge_Rotate_sloc2_1_0;0x0003;+;)
+12 addr16(___fslt;)  
+AA 82
+E5 81
+24 FC
+F5 81
+D0 07
+D0 06
+D0 05
+EA
+60 rel2(L024025?;)
+02 addr16(L024006?;)  
+E4
+F5 data8(_Find_Tape_PARM_2;)
+F5 data8(_Find_Tape_PARM_2;0x0001;+;)
+8D 82
+8E 83
+8F F0
+02 addr16(_Find_Tape;)  
+C2 bit(_find_bridge_flag;)
+75 data8(_Calibrate_LSensors_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Calibrate_LSensors_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Calibrate_LSensors_PARM_2;0x0002;+;) 00
+75 data8(_Calibrate_LSensors_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Calibrate_LSensors_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Calibrate_LSensors_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Calibrate_LSensors;)  
+E4
+F5 data8(_Find_Tape_PARM_2;)
+F5 data8(_Find_Tape_PARM_2;0x0001;+;)
+90 data16(_Run_Autonomous_gnd_VM_1_164;)  
+75 F0 00
+12 addr16(_Find_Tape;)  
+75 data8(_Rotate_PARM_2;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Rotate_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Rotate_PARM_2;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Rotate;)  
+D2 bit(_break_when_dir_found;)
+75 data8(_Follow_Tape_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Follow_Tape_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_2;0x0002;+;) 00
+75 data8(_Follow_Tape_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Follow_Tape_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Follow_Tape;)  
+12 addr16(_stop;)  
+90 00 0A
+12 addr16(_Claw_Pos;)  
+90 03 E8
+12 addr16(_waitms;)  
+12 addr16(_Find_Object;)  
+12 addr16(_Track_Object;)  
+75 data8(_Calibrate_LSensors_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Calibrate_LSensors_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Calibrate_LSensors_PARM_2;0x0002;+;) 00
+75 data8(_Calibrate_LSensors_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Calibrate_LSensors_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Calibrate_LSensors_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Calibrate_LSensors;)  
+75 data8(_Find_Tape_PARM_2;) 01
+E4
+F5 data8(_Find_Tape_PARM_2;0x0001;+;)
+90 data16(_Run_Autonomous_gnd_VM_1_164;)  
+75 F0 00
+12 addr16(_Find_Tape;)  
+90 data16(_dir_count;)  
+E4
+F0
+A3
+F0
+75 data8(_Follow_Tape_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Follow_Tape_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_2;0x0002;+;) 00
+75 data8(_Follow_Tape_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Follow_Tape_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Follow_Tape;)  
+D2 bit(_find_bridge_flag;)
+D2 bit(_circ2;)
+75 data8(_Follow_Tape_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Follow_Tape_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_2;0x0002;+;) 00
+75 data8(_Follow_Tape_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Follow_Tape_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Follow_Tape;)  
+12 addr16(_stop;)  
+90 01 F4
+12 addr16(_waitms;)  
+75 data8(_Calibrate_LSensors_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Calibrate_LSensors_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Calibrate_LSensors_PARM_2;0x0002;+;) 00
+75 data8(_Calibrate_LSensors_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Calibrate_LSensors_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Calibrate_LSensors_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Calibrate_LSensors;)  
+75 data8(_Find_Tape_PARM_2;) 01
+E4
+F5 data8(_Find_Tape_PARM_2;0x0001;+;)
+90 data16(_Run_Autonomous_gnd_VM_1_164;)  
+75 F0 00
+12 addr16(_Find_Tape;)  
+75 data8(_Rotate_PARM_2;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Rotate_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Rotate_PARM_2;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Rotate;)  
+90 00 02
+12 addr16(_Claw_Pos;)  
+90 data16(_dir_count;)  
+E4
+F0
+A3
+F0
+D2 bit(_break_when_dir_found;)
+75 data8(_Follow_Tape_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Follow_Tape_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_2;0x0002;+;) 00
+75 data8(_Follow_Tape_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Follow_Tape_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Follow_Tape;)  
+D2 bit(_find_bridge_flag;)
+C2 bit(_circ2;)
+75 data8(_Follow_Tape_PARM_2;) data8(_Run_Autonomous_gnd_VM_1_164;)
+75 data8(_Follow_Tape_PARM_2;0x0001;+;) data8(_Run_Autonomous_gnd_VM_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_2;0x0002;+;) 00
+75 data8(_Follow_Tape_PARM_3;) data8(_Run_Autonomous_gnd_VR_1_164;)
+75 data8(_Follow_Tape_PARM_3;0x0001;+;) data8(_Run_Autonomous_gnd_VR_1_164;0x0008;>>;)
+75 data8(_Follow_Tape_PARM_3;0x0002;+;) 00
+90 data16(_Run_Autonomous_gnd_VL_1_164;)  
+75 F0 00
+12 addr16(_Follow_Tape;)  
+02 addr16(_debug;)  
+75 A7 00
+75 97 DE
+75 97 AD
+75 FF 80
+75 EF 06
+75 A7 10
+75 C1 20
+75 A7 00
+75 A9 00
+75 A9 00
+E5 A9
+30 E7 rel3(L026001?;)
+75 A9 03
+75 A9 03
+E5 A9
+30 E7 rel3(L026004?;)
+43 A4 10
+75 E1 01
+75 E2 00
+75 E3 40
+75 98 10
+75 8D E6
+85 8D 8B
+53 89 0F
+43 89 20
+D2 8E
+D2 99
+75 C8 00
+43 8E 10
+75 CA E0
+75 CB E3
+75 CE FF
+75 CF FF
+D2 AD
+D2 CA
+D2 AF
+75 82 00
+22
+C0 data8(bits;)
+C0 E0
+C0 F0
+C0 82
+C0 83
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 D0
+75 D0 10
+C2 CF
+90 data16(_pwm_count;)  
+E0
+24 01
+F0
+90 data16(_pwm_count;)  
+E0
+FA
+BA 64 rel3(L027017?;)
+40 rel2(L027004?;)
+90 data16(_pwm_count;)  
+E4
+F0
+90 data16(_timer_count;)  
+E0
+24 01
+F0
+A3
+E0
+34 00
+F0
+90 data16(_timer_count;)  
+E0
+FA
+A3
+E0
+FB
+C3
+EA
+94 32
+EB
+94 00
+40 rel2(L027004?;)
+90 data16(_timer_count;)  
+E4
+F0
+A3
+F0
+C2 bit(_dir_flag;)
+20 bit(_ML_dir;) rel3(L027006?;)
+C2 A1
+90 data16(_pwm_count;)  
+E0
+FA
+90 data16(_pwmL;)  
+E0
+FB
+A3
+E0
+FC
+7D 00
+C3
+EA
+9B
+ED
+9C
+92 A2
+80 rel2(L027007?;)
+C2 A2
+90 data16(_pwm_count;)  
+E0
+FA
+90 data16(_pwmL;)  
+E0
+FB
+A3
+E0
+FC
+7D 00
+C3
+EA
+9B
+ED
+9C
+92 A1
+30 bit(_MR_dir;) rel3(L027009?;)
+C2 A3
+90 data16(_pwm_count;)  
+E0
+FA
+90 data16(_pwmR;)  
+E0
+FB
+A3
+E0
+FC
+7D 00
+C3
+EA
+9B
+ED
+9C
+92 A4
+80 rel2(L027010?;)
+C2 A4
+90 data16(_pwm_count;)  
+E0
+FA
+90 data16(_pwmR;)  
+E0
+FB
+A3
+E0
+FC
+7D 00
+C3
+EA
+9B
+ED
+9C
+92 A3
+75 D0 00
+12 addr16(_sonar_op;)  
+75 D0 00
+12 addr16(_claw_control;)  
+75 D0 10
+D0 D0
+D0 01
+D0 00
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+D0 83
+D0 82
+D0 F0
+D0 E0
+D0 data8(bits;)
+32
+12 addr16(_stop;)  
+75 data8(_InitPinADC_PARM_2;) 06
+75 82 01
+12 addr16(_InitPinADC;)  
+75 data8(_InitPinADC_PARM_2;) 05
+75 82 01
+12 addr16(_InitPinADC;)  
+75 data8(_InitPinADC_PARM_2;) 04
+75 82 01
+12 addr16(_InitPinADC;)  
+75 data8(_InitPinADC_PARM_2;) 03
+75 82 01
+12 addr16(_InitPinADC;)  
+75 data8(_InitPinADC_PARM_2;) 02
+75 82 01
+12 addr16(_InitPinADC;)  
+02 addr16(_InitADC;)  
+</CODE>
+
+<CODE R_CSEG>
+</CODE>
+
+<CODE R_XINIT>
+FF
+FF
+FF
+FF
+FF
+FF
+00
+00
+00
+00
+00
+</CODE>
+
+<CODE R_CONST>
+</CODE>
+
+<CODE AT 002E>
+</CODE>

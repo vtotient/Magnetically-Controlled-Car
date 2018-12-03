@@ -1,0 +1,295 @@
+<MODULE>
+clawcode
+</MODULE>
+
+<OPTC51>
+--model-small
+</OPTC51>
+
+<SEGMENTS>
+R_GSINIT,code,0000,NO
+R_BSEG,bit,0000,NO
+R_XSEG,xdata,0000,NO
+BIT_BANK,data,0001,OV
+R_CONST,code,0026,NO
+rbank0,data,0000,OV
+rbank2,data,0000,OV
+R_PSEG,xdata,0000,NO
+R_DINIT,code,0025,NO
+R_DSEG,data,000D,NO
+R_OSEG,data,0000,OV
+R_IXSEG,xdata,0000,NO
+R_ISEG,idata,0000,NO
+R_HOME,code,0000,NO
+R_XINIT,code,0000,NO
+R_CSEG,code,014A,NO
+</SEGMENTS>
+
+<LOCALS>
+L002004?,R_CSEG,0029,0000
+L002001?,R_CSEG,001E,0000
+bits,BIT_BANK,0000,0001
+L003007?,R_CSEG,0095,0000
+L003004?,R_CSEG,00A5,0000
+L003002?,R_CSEG,0083,0000
+b0,BIT_BANK,0000,0000
+b1,BIT_BANK,0000,0000
+b2,BIT_BANK,0000,0000
+b3,BIT_BANK,0000,0000
+b4,BIT_BANK,0000,0000
+b5,BIT_BANK,0000,0000
+b6,BIT_BANK,0000,0000
+b7,BIT_BANK,0000,0000
+L005002?,R_CSEG,0112,0000
+__str_0,R_CONST,0000,0000
+__str_1,R_CONST,0023,0000
+</LOCALS>
+
+<PUBLICS>
+_main,R_CSEG,0112,0000
+_claw_control,R_CSEG,0069,0000
+__c51_external_startup,R_CSEG,0000,0000
+_Timer2_ISR,R_CSEG,00CB,0000
+_claw_count,R_DSEG,000B,0002
+_pwm_count,R_DSEG,000A,0001
+_pwmL,R_DSEG,0000,0002
+_pwmR,R_DSEG,0002,0002
+_claw_pos,R_DSEG,0006,0002
+_pwm,R_DSEG,0004,0002
+_dir_count,R_DSEG,0008,0002
+</PUBLICS>
+
+<EXTERNALS>
+_scanf,any,0000,0000
+_printf,any,0000,0000
+_crt0,any,0000,0000
+</EXTERNALS>
+
+<CODE AT 0000>
+</CODE>
+
+<CODE R_HOME>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_CSEG>
+</CODE>
+
+<CODE AT 0000>
+02 addr16(_crt0;)  
+</CODE>
+
+<CODE AT 002B>
+02 addr16(_Timer2_ISR;)  
+</CODE>
+
+<CODE R_HOME>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_DINIT>
+75 data8(_pwmL;) FF
+75 data8(_pwmL;0x0001;+;) FF
+75 data8(_pwmR;) FF
+75 data8(_pwmR;0x0001;+;) FF
+75 data8(_pwm;) FF
+75 data8(_pwm;0x0001;+;) FF
+75 data8(_claw_pos;) 01
+E4
+F5 data8(_claw_pos;0x0001;+;)
+E4
+F5 data8(_dir_count;)
+F5 data8(_dir_count;0x0001;+;)
+75 data8(_pwm_count;) 00
+E4
+F5 data8(_claw_count;)
+F5 data8(_claw_count;0x0001;+;)
+</CODE>
+
+<CODE R_CSEG>
+75 A7 00
+75 97 DE
+75 97 AD
+75 FF 80
+75 EF 06
+75 A7 10
+75 C1 20
+75 A7 00
+75 A9 00
+75 A9 00
+E5 A9
+30 E7 rel3(L002001?;)
+75 A9 03
+75 A9 03
+E5 A9
+30 E7 rel3(L002004?;)
+43 A4 10
+75 E1 01
+75 E2 00
+75 E3 40
+75 98 10
+75 8D E6
+85 8D 8B
+53 89 0F
+43 89 20
+D2 8E
+D2 99
+75 C8 00
+43 8E 10
+75 CA E0
+75 CB E3
+75 CE FF
+75 CF FF
+D2 AD
+D2 CA
+D2 AF
+75 82 00
+22
+74 01
+25 data8(_claw_count;)
+F5 data8(_claw_count;)
+E4
+35 data8(_claw_count;0x0001;+;)
+F5 data8(_claw_count;0x0001;+;)
+C3
+74 C7
+95 data8(_claw_count;)
+E4
+95 data8(_claw_count;0x0001;+;)
+50 rel2(L003002?;)
+E4
+F5 data8(_claw_count;)
+F5 data8(_claw_count;0x0001;+;)
+C3
+E5 data8(_claw_count;)
+94 05
+E5 data8(_claw_count;0x0001;+;)
+94 00
+50 rel2(L003007?;)
+B2 A1
+D2 97
+D2 A0
+22
+C3
+E5 data8(_claw_count;)
+94 16
+E5 data8(_claw_count;0x0001;+;)
+94 00
+40 rel2(L003004?;)
+C2 97
+C2 A0
+22
+74 05
+25 data8(_claw_pos;)
+FA
+E4
+35 data8(_claw_pos;0x0001;+;)
+FB
+C3
+E5 data8(_claw_count;)
+9A
+E5 data8(_claw_count;0x0001;+;)
+9B
+92 97
+74 16
+C3
+95 data8(_claw_pos;)
+FA
+E4
+95 data8(_claw_pos;0x0001;+;)
+FB
+C3
+E5 data8(_claw_count;)
+9A
+E5 data8(_claw_count;0x0001;+;)
+9B
+92 A0
+22
+C0 data8(bits;)
+C0 E0
+C0 F0
+C0 82
+C0 83
+C0 02
+C0 03
+C0 04
+C0 05
+C0 06
+C0 07
+C0 00
+C0 01
+C0 D0
+75 D0 10
+C2 CF
+75 D0 00
+12 addr16(_claw_control;)  
+75 D0 10
+D0 D0
+D0 01
+D0 00
+D0 07
+D0 06
+D0 05
+D0 04
+D0 03
+D0 02
+D0 83
+D0 82
+D0 F0
+D0 E0
+D0 data8(bits;)
+32
+74 data8(__str_0;)
+C0 E0
+74 data8(__str_0;0x0008;>>;)
+C0 E0
+74 80
+C0 E0
+12 addr16(_printf;)  
+15 81
+15 81
+15 81
+74 data8(_claw_pos;)
+C0 E0
+74 data8(_claw_pos;0x0008;>>;)
+C0 E0
+74 40
+C0 E0
+74 data8(__str_1;)
+C0 E0
+74 data8(__str_1;0x0008;>>;)
+C0 E0
+74 80
+C0 E0
+12 addr16(_scanf;)  
+E5 81
+24 FA
+F5 81
+80 rel2(L005002?;)
+</CODE>
+
+<CODE R_CSEG>
+</CODE>
+
+<CODE R_XINIT>
+</CODE>
+
+<CODE R_CONST>
+0A
+50 6C 65 61 73 65 20 65 6E 74 65 72 20 63 6C 61 77
+20 70 6F 73 69 74 69 6F 6E 28 30 2D 34 29 3A 20
+
+00
+25 64 
+00
+</CODE>
+
+<CODE AT 002E>
+</CODE>

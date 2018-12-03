@@ -1,0 +1,1261 @@
+0000              1   ;--------------------------------------------------------
+0000              2   ; File Created by C51
+0000              3   ; Version 1.0.0 #1069 (Apr 23 2015) (MSVC)
+0000              4   ; This file was generated Sun Apr 01 17:12:16 2018
+0000              5   ;--------------------------------------------------------
+                  5   $name Robot_copy
+                  6   $optc51 --model-small
+0000              8            R_DSEG    segment data
+0000              9            R_CSEG    segment code
+0000             10            R_BSEG    segment bit
+0000             11            R_XSEG    segment xdata
+0000             12            R_PSEG    segment xdata
+0000             13            R_ISEG    segment idata
+0000             14            R_OSEG    segment data overlay
+0000             15            BIT_BANK  segment data overlay
+0000             16            R_HOME    segment code
+0000             17            R_GSINIT  segment code
+0000             18            R_IXSEG   segment xdata
+0000             19            R_CONST   segment code
+0000             20            R_XINIT   segment code
+0000             21            R_DINIT   segment code
+0000             22   
+0000             23   ;--------------------------------------------------------
+0000             24   ; Public variables in this module
+0000             25   ;--------------------------------------------------------
+0000             26            public _main
+0000             27            public _calculate_DC
+0000             28            public _Serial_ISR
+0000             29            public _Timer2_ISR
+0000             30            public __c51_external_startup
+0000             31            public _fn4
+0000             32            public _fn3
+0000             33            public _fn2
+0000             34            public _fn1
+0000             35            public _y_dir
+0000             36            public _x_dir
+0000             37            public _M2_dir
+0000             38            public _M1_dir
+0000             39            public _main_temp
+0000             40            public _no_signal1_count
+0000             41            public _no_signal0_count
+0000             42            public _y_absolute
+0000             43            public _x_absolute
+0000             44            public _M2_duty
+0000             45            public _M1_duty
+0000             46            public _M2_temp
+0000             47            public _M1_temp
+0000             48            public _pwm_count
+0000             49   ;--------------------------------------------------------
+0000             50   ; Special Function Registers
+0000             51   ;--------------------------------------------------------
+0000             52   _ACC            DATA 0xe0
+0000             53   _ADC0ASAH       DATA 0xb6
+0000             54   _ADC0ASAL       DATA 0xb5
+0000             55   _ADC0ASCF       DATA 0xa1
+0000             56   _ADC0ASCT       DATA 0xc7
+0000             57   _ADC0CF0        DATA 0xbc
+0000             58   _ADC0CF1        DATA 0xb9
+0000             59   _ADC0CF2        DATA 0xdf
+0000             60   _ADC0CN0        DATA 0xe8
+0000             61   _ADC0CN1        DATA 0xb2
+0000             62   _ADC0CN2        DATA 0xb3
+0000             63   _ADC0GTH        DATA 0xc4
+0000             64   _ADC0GTL        DATA 0xc3
+0000             65   _ADC0H          DATA 0xbe
+0000             66   _ADC0L          DATA 0xbd
+0000             67   _ADC0LTH        DATA 0xc6
+0000             68   _ADC0LTL        DATA 0xc5
+0000             69   _ADC0MX         DATA 0xbb
+0000             70   _B              DATA 0xf0
+0000             71   _CKCON0         DATA 0x8e
+0000             72   _CKCON1         DATA 0xa6
+0000             73   _CLEN0          DATA 0xc6
+0000             74   _CLIE0          DATA 0xc7
+0000             75   _CLIF0          DATA 0xe8
+0000             76   _CLKSEL         DATA 0xa9
+0000             77   _CLOUT0         DATA 0xd1
+0000             78   _CLU0CF         DATA 0xb1
+0000             79   _CLU0FN         DATA 0xaf
+0000             80   _CLU0MX         DATA 0x84
+0000             81   _CLU1CF         DATA 0xb3
+0000             82   _CLU1FN         DATA 0xb2
+0000             83   _CLU1MX         DATA 0x85
+0000             84   _CLU2CF         DATA 0xb6
+0000             85   _CLU2FN         DATA 0xb5
+0000             86   _CLU2MX         DATA 0x91
+0000             87   _CLU3CF         DATA 0xbf
+0000             88   _CLU3FN         DATA 0xbe
+0000             89   _CLU3MX         DATA 0xae
+0000             90   _CMP0CN0        DATA 0x9b
+0000             91   _CMP0CN1        DATA 0x99
+0000             92   _CMP0MD         DATA 0x9d
+0000             93   _CMP0MX         DATA 0x9f
+0000             94   _CMP1CN0        DATA 0xbf
+0000             95   _CMP1CN1        DATA 0xac
+0000             96   _CMP1MD         DATA 0xab
+0000             97   _CMP1MX         DATA 0xaa
+0000             98   _CRC0CN0        DATA 0xce
+0000             99   _CRC0CN1        DATA 0x86
+0000            100   _CRC0CNT        DATA 0xd3
+0000            101   _CRC0DAT        DATA 0xcb
+0000            102   _CRC0FLIP       DATA 0xcf
+0000            103   _CRC0IN         DATA 0xca
+0000            104   _CRC0ST         DATA 0xd2
+0000            105   _DAC0CF0        DATA 0x91
+0000            106   _DAC0CF1        DATA 0x92
+0000            107   _DAC0H          DATA 0x85
+0000            108   _DAC0L          DATA 0x84
+0000            109   _DAC1CF0        DATA 0x93
+0000            110   _DAC1CF1        DATA 0x94
+0000            111   _DAC1H          DATA 0x8a
+0000            112   _DAC1L          DATA 0x89
+0000            113   _DAC2CF0        DATA 0x95
+0000            114   _DAC2CF1        DATA 0x96
+0000            115   _DAC2H          DATA 0x8c
+0000            116   _DAC2L          DATA 0x8b
+0000            117   _DAC3CF0        DATA 0x9a
+0000            118   _DAC3CF1        DATA 0x9c
+0000            119   _DAC3H          DATA 0x8e
+0000            120   _DAC3L          DATA 0x8d
+0000            121   _DACGCF0        DATA 0x88
+0000            122   _DACGCF1        DATA 0x98
+0000            123   _DACGCF2        DATA 0xa2
+0000            124   _DERIVID        DATA 0xad
+0000            125   _DEVICEID       DATA 0xb5
+0000            126   _DPH            DATA 0x83
+0000            127   _DPL            DATA 0x82
+0000            128   _EIE1           DATA 0xe6
+0000            129   _EIE2           DATA 0xf3
+0000            130   _EIP1           DATA 0xbb
+0000            131   _EIP1H          DATA 0xee
+0000            132   _EIP2           DATA 0xed
+0000            133   _EIP2H          DATA 0xf6
+0000            134   _EMI0CN         DATA 0xe7
+0000            135   _FLKEY          DATA 0xb7
+0000            136   _HFO0CAL        DATA 0xc7
+0000            137   _HFO1CAL        DATA 0xd6
+0000            138   _HFOCN          DATA 0xef
+0000            139   _I2C0ADM        DATA 0xff
+0000            140   _I2C0CN0        DATA 0xba
+0000            141   _I2C0DIN        DATA 0xbc
+0000            142   _I2C0DOUT       DATA 0xbb
+0000            143   _I2C0FCN0       DATA 0xad
+0000            144   _I2C0FCN1       DATA 0xab
+0000            145   _I2C0FCT        DATA 0xf5
+0000            146   _I2C0SLAD       DATA 0xbd
+0000            147   _I2C0STAT       DATA 0xb9
+0000            148   _IE             DATA 0xa8
+0000            149   _IP             DATA 0xb8
+0000            150   _IPH            DATA 0xf2
+0000            151   _IT01CF         DATA 0xe4
+0000            152   _LFO0CN         DATA 0xb1
+0000            153   _P0             DATA 0x80
+0000            154   _P0MASK         DATA 0xfe
+0000            155   _P0MAT          DATA 0xfd
+0000            156   _P0MDIN         DATA 0xf1
+0000            157   _P0MDOUT        DATA 0xa4
+0000            158   _P0SKIP         DATA 0xd4
+0000            159   _P1             DATA 0x90
+0000            160   _P1MASK         DATA 0xee
+0000            161   _P1MAT          DATA 0xed
+0000            162   _P1MDIN         DATA 0xf2
+0000            163   _P1MDOUT        DATA 0xa5
+0000            164   _P1SKIP         DATA 0xd5
+0000            165   _P2             DATA 0xa0
+0000            166   _P2MASK         DATA 0xfc
+0000            167   _P2MAT          DATA 0xfb
+0000            168   _P2MDIN         DATA 0xf3
+0000            169   _P2MDOUT        DATA 0xa6
+0000            170   _P2SKIP         DATA 0xcc
+0000            171   _P3             DATA 0xb0
+0000            172   _P3MDIN         DATA 0xf4
+0000            173   _P3MDOUT        DATA 0x9c
+0000            174   _PCA0CENT       DATA 0x9e
+0000            175   _PCA0CLR        DATA 0x9c
+0000            176   _PCA0CN0        DATA 0xd8
+0000            177   _PCA0CPH0       DATA 0xfc
+0000            178   _PCA0CPH1       DATA 0xea
+0000            179   _PCA0CPH2       DATA 0xec
+0000            180   _PCA0CPH3       DATA 0xf5
+0000            181   _PCA0CPH4       DATA 0x85
+0000            182   _PCA0CPH5       DATA 0xde
+0000            183   _PCA0CPL0       DATA 0xfb
+0000            184   _PCA0CPL1       DATA 0xe9
+0000            185   _PCA0CPL2       DATA 0xeb
+0000            186   _PCA0CPL3       DATA 0xf4
+0000            187   _PCA0CPL4       DATA 0x84
+0000            188   _PCA0CPL5       DATA 0xdd
+0000            189   _PCA0CPM0       DATA 0xda
+0000            190   _PCA0CPM1       DATA 0xdb
+0000            191   _PCA0CPM2       DATA 0xdc
+0000            192   _PCA0CPM3       DATA 0xae
+0000            193   _PCA0CPM4       DATA 0xaf
+0000            194   _PCA0CPM5       DATA 0xcc
+0000            195   _PCA0H          DATA 0xfa
+0000            196   _PCA0L          DATA 0xf9
+0000            197   _PCA0MD         DATA 0xd9
+0000            198   _PCA0POL        DATA 0x96
+0000            199   _PCA0PWM        DATA 0xf7
+0000            200   _PCON0          DATA 0x87
+0000            201   _PCON1          DATA 0xcd
+0000            202   _PFE0CN         DATA 0xc1
+0000            203   _PRTDRV         DATA 0xf6
+0000            204   _PSCTL          DATA 0x8f
+0000            205   _PSTAT0         DATA 0xaa
+0000            206   _PSW            DATA 0xd0
+0000            207   _REF0CN         DATA 0xd1
+0000            208   _REG0CN         DATA 0xc9
+0000            209   _REVID          DATA 0xb6
+0000            210   _RSTSRC         DATA 0xef
+0000            211   _SBCON1         DATA 0x94
+0000            212   _SBRLH1         DATA 0x96
+0000            213   _SBRLL1         DATA 0x95
+0000            214   _SBUF           DATA 0x99
+0000            215   _SBUF0          DATA 0x99
+0000            216   _SBUF1          DATA 0x92
+0000            217   _SCON           DATA 0x98
+0000            218   _SCON0          DATA 0x98
+0000            219   _SCON1          DATA 0xc8
+0000            220   _SFRPAGE        DATA 0xa7
+0000            221   _SFRPGCN        DATA 0xbc
+0000            222   _SFRSTACK       DATA 0xd7
+0000            223   _SMB0ADM        DATA 0xd6
+0000            224   _SMB0ADR        DATA 0xd7
+0000            225   _SMB0CF         DATA 0xc1
+0000            226   _SMB0CN0        DATA 0xc0
+0000            227   _SMB0DAT        DATA 0xc2
+0000            228   _SMB0FCN0       DATA 0xc3
+0000            229   _SMB0FCN1       DATA 0xc4
+0000            230   _SMB0FCT        DATA 0xef
+0000            231   _SMB0RXLN       DATA 0xc5
+0000            232   _SMB0TC         DATA 0xac
+0000            233   _SMOD1          DATA 0x93
+0000            234   _SP             DATA 0x81
+0000            235   _SPI0CFG        DATA 0xa1
+0000            236   _SPI0CKR        DATA 0xa2
+0000            237   _SPI0CN0        DATA 0xf8
+0000            238   _SPI0DAT        DATA 0xa3
+0000            239   _SPI0FCN0       DATA 0x9a
+0000            240   _SPI0FCN1       DATA 0x9b
+0000            241   _SPI0FCT        DATA 0xf7
+0000            242   _SPI0PCF        DATA 0xdf
+0000            243   _TCON           DATA 0x88
+0000            244   _TH0            DATA 0x8c
+0000            245   _TH1            DATA 0x8d
+0000            246   _TL0            DATA 0x8a
+0000            247   _TL1            DATA 0x8b
+0000            248   _TMOD           DATA 0x89
+0000            249   _TMR2CN0        DATA 0xc8
+0000            250   _TMR2CN1        DATA 0xfd
+0000            251   _TMR2H          DATA 0xcf
+0000            252   _TMR2L          DATA 0xce
+0000            253   _TMR2RLH        DATA 0xcb
+0000            254   _TMR2RLL        DATA 0xca
+0000            255   _TMR3CN0        DATA 0x91
+0000            256   _TMR3CN1        DATA 0xfe
+0000            257   _TMR3H          DATA 0x95
+0000            258   _TMR3L          DATA 0x94
+0000            259   _TMR3RLH        DATA 0x93
+0000            260   _TMR3RLL        DATA 0x92
+0000            261   _TMR4CN0        DATA 0x98
+0000            262   _TMR4CN1        DATA 0xff
+0000            263   _TMR4H          DATA 0xa5
+0000            264   _TMR4L          DATA 0xa4
+0000            265   _TMR4RLH        DATA 0xa3
+0000            266   _TMR4RLL        DATA 0xa2
+0000            267   _TMR5CN0        DATA 0xc0
+0000            268   _TMR5CN1        DATA 0xf1
+0000            269   _TMR5H          DATA 0xd5
+0000            270   _TMR5L          DATA 0xd4
+0000            271   _TMR5RLH        DATA 0xd3
+0000            272   _TMR5RLL        DATA 0xd2
+0000            273   _UART0PCF       DATA 0xd9
+0000            274   _UART1FCN0      DATA 0x9d
+0000            275   _UART1FCN1      DATA 0xd8
+0000            276   _UART1FCT       DATA 0xfa
+0000            277   _UART1LIN       DATA 0x9e
+0000            278   _UART1PCF       DATA 0xda
+0000            279   _VDM0CN         DATA 0xff
+0000            280   _WDTCN          DATA 0x97
+0000            281   _XBR0           DATA 0xe1
+0000            282   _XBR1           DATA 0xe2
+0000            283   _XBR2           DATA 0xe3
+0000            284   _XOSC0CN        DATA 0x86
+0000            285   _DPTR           DATA 0x8382
+0000            286   _TMR2RL         DATA 0xcbca
+0000            287   _TMR3RL         DATA 0x9392
+0000            288   _TMR4RL         DATA 0xa3a2
+0000            289   _TMR5RL         DATA 0xd3d2
+0000            290   _TMR0           DATA 0x8c8a
+0000            291   _TMR1           DATA 0x8d8b
+0000            292   _TMR2           DATA 0xcfce
+0000            293   _TMR3           DATA 0x9594
+0000            294   _TMR4           DATA 0xa5a4
+0000            295   _TMR5           DATA 0xd5d4
+0000            296   _SBRL1          DATA 0x9695
+0000            297   _PCA0           DATA 0xfaf9
+0000            298   _PCA0CP0        DATA 0xfcfb
+0000            299   _PCA0CP1        DATA 0xeae9
+0000            300   _PCA0CP2        DATA 0xeceb
+0000            301   _PCA0CP3        DATA 0xf5f4
+0000            302   _PCA0CP4        DATA 0x8584
+0000            303   _PCA0CP5        DATA 0xdedd
+0000            304   _ADC0ASA        DATA 0xb6b5
+0000            305   _ADC0GT         DATA 0xc4c3
+0000            306   _ADC0           DATA 0xbebd
+0000            307   _ADC0LT         DATA 0xc6c5
+0000            308   _DAC0           DATA 0x8584
+0000            309   _DAC1           DATA 0x8a89
+0000            310   _DAC2           DATA 0x8c8b
+0000            311   _DAC3           DATA 0x8e8d
+0000            312   ;--------------------------------------------------------
+0000            313   ; special function bits
+0000            314   ;--------------------------------------------------------
+0000            315   _ACC_0          BIT 0xe0
+0000            316   _ACC_1          BIT 0xe1
+0000            317   _ACC_2          BIT 0xe2
+0000            318   _ACC_3          BIT 0xe3
+0000            319   _ACC_4          BIT 0xe4
+0000            320   _ACC_5          BIT 0xe5
+0000            321   _ACC_6          BIT 0xe6
+0000            322   _ACC_7          BIT 0xe7
+0000            323   _TEMPE          BIT 0xe8
+0000            324   _ADGN0          BIT 0xe9
+0000            325   _ADGN1          BIT 0xea
+0000            326   _ADWINT         BIT 0xeb
+0000            327   _ADBUSY         BIT 0xec
+0000            328   _ADINT          BIT 0xed
+0000            329   _IPOEN          BIT 0xee
+0000            330   _ADEN           BIT 0xef
+0000            331   _B_0            BIT 0xf0
+0000            332   _B_1            BIT 0xf1
+0000            333   _B_2            BIT 0xf2
+0000            334   _B_3            BIT 0xf3
+0000            335   _B_4            BIT 0xf4
+0000            336   _B_5            BIT 0xf5
+0000            337   _B_6            BIT 0xf6
+0000            338   _B_7            BIT 0xf7
+0000            339   _C0FIF          BIT 0xe8
+0000            340   _C0RIF          BIT 0xe9
+0000            341   _C1FIF          BIT 0xea
+0000            342   _C1RIF          BIT 0xeb
+0000            343   _C2FIF          BIT 0xec
+0000            344   _C2RIF          BIT 0xed
+0000            345   _C3FIF          BIT 0xee
+0000            346   _C3RIF          BIT 0xef
+0000            347   _D1SRC0         BIT 0x88
+0000            348   _D1SRC1         BIT 0x89
+0000            349   _D1AMEN         BIT 0x8a
+0000            350   _D01REFSL       BIT 0x8b
+0000            351   _D3SRC0         BIT 0x8c
+0000            352   _D3SRC1         BIT 0x8d
+0000            353   _D3AMEN         BIT 0x8e
+0000            354   _D23REFSL       BIT 0x8f
+0000            355   _D0UDIS         BIT 0x98
+0000            356   _D1UDIS         BIT 0x99
+0000            357   _D2UDIS         BIT 0x9a
+0000            358   _D3UDIS         BIT 0x9b
+0000            359   _EX0            BIT 0xa8
+0000            360   _ET0            BIT 0xa9
+0000            361   _EX1            BIT 0xaa
+0000            362   _ET1            BIT 0xab
+0000            363   _ES0            BIT 0xac
+0000            364   _ET2            BIT 0xad
+0000            365   _ESPI0          BIT 0xae
+0000            366   _EA             BIT 0xaf
+0000            367   _PX0            BIT 0xb8
+0000            368   _PT0            BIT 0xb9
+0000            369   _PX1            BIT 0xba
+0000            370   _PT1            BIT 0xbb
+0000            371   _PS0            BIT 0xbc
+0000            372   _PT2            BIT 0xbd
+0000            373   _PSPI0          BIT 0xbe
+0000            374   _P0_0           BIT 0x80
+0000            375   _P0_1           BIT 0x81
+0000            376   _P0_2           BIT 0x82
+0000            377   _P0_3           BIT 0x83
+0000            378   _P0_4           BIT 0x84
+0000            379   _P0_5           BIT 0x85
+0000            380   _P0_6           BIT 0x86
+0000            381   _P0_7           BIT 0x87
+0000            382   _P1_0           BIT 0x90
+0000            383   _P1_1           BIT 0x91
+0000            384   _P1_2           BIT 0x92
+0000            385   _P1_3           BIT 0x93
+0000            386   _P1_4           BIT 0x94
+0000            387   _P1_5           BIT 0x95
+0000            388   _P1_6           BIT 0x96
+0000            389   _P1_7           BIT 0x97
+0000            390   _P2_0           BIT 0xa0
+0000            391   _P2_1           BIT 0xa1
+0000            392   _P2_2           BIT 0xa2
+0000            393   _P2_3           BIT 0xa3
+0000            394   _P2_4           BIT 0xa4
+0000            395   _P2_5           BIT 0xa5
+0000            396   _P2_6           BIT 0xa6
+0000            397   _P3_0           BIT 0xb0
+0000            398   _P3_1           BIT 0xb1
+0000            399   _P3_2           BIT 0xb2
+0000            400   _P3_3           BIT 0xb3
+0000            401   _P3_4           BIT 0xb4
+0000            402   _P3_7           BIT 0xb7
+0000            403   _CCF0           BIT 0xd8
+0000            404   _CCF1           BIT 0xd9
+0000            405   _CCF2           BIT 0xda
+0000            406   _CCF3           BIT 0xdb
+0000            407   _CCF4           BIT 0xdc
+0000            408   _CCF5           BIT 0xdd
+0000            409   _CR             BIT 0xde
+0000            410   _CF             BIT 0xdf
+0000            411   _PARITY         BIT 0xd0
+0000            412   _F1             BIT 0xd1
+0000            413   _OV             BIT 0xd2
+0000            414   _RS0            BIT 0xd3
+0000            415   _RS1            BIT 0xd4
+0000            416   _F0             BIT 0xd5
+0000            417   _AC             BIT 0xd6
+0000            418   _CY             BIT 0xd7
+0000            419   _RI             BIT 0x98
+0000            420   _TI             BIT 0x99
+0000            421   _RB8            BIT 0x9a
+0000            422   _TB8            BIT 0x9b
+0000            423   _REN            BIT 0x9c
+0000            424   _CE             BIT 0x9d
+0000            425   _SMODE          BIT 0x9e
+0000            426   _RI1            BIT 0xc8
+0000            427   _TI1            BIT 0xc9
+0000            428   _RBX1           BIT 0xca
+0000            429   _TBX1           BIT 0xcb
+0000            430   _REN1           BIT 0xcc
+0000            431   _PERR1          BIT 0xcd
+0000            432   _OVR1           BIT 0xce
+0000            433   _SI             BIT 0xc0
+0000            434   _ACK            BIT 0xc1
+0000            435   _ARBLOST        BIT 0xc2
+0000            436   _ACKRQ          BIT 0xc3
+0000            437   _STO            BIT 0xc4
+0000            438   _STA            BIT 0xc5
+0000            439   _TXMODE         BIT 0xc6
+0000            440   _MASTER         BIT 0xc7
+0000            441   _SPIEN          BIT 0xf8
+0000            442   _TXNF           BIT 0xf9
+0000            443   _NSSMD0         BIT 0xfa
+0000            444   _NSSMD1         BIT 0xfb
+0000            445   _RXOVRN         BIT 0xfc
+0000            446   _MODF           BIT 0xfd
+0000            447   _WCOL           BIT 0xfe
+0000            448   _SPIF           BIT 0xff
+0000            449   _IT0            BIT 0x88
+0000            450   _IE0            BIT 0x89
+0000            451   _IT1            BIT 0x8a
+0000            452   _IE1            BIT 0x8b
+0000            453   _TR0            BIT 0x8c
+0000            454   _TF0            BIT 0x8d
+0000            455   _TR1            BIT 0x8e
+0000            456   _TF1            BIT 0x8f
+0000            457   _T2XCLK0        BIT 0xc8
+0000            458   _T2XCLK1        BIT 0xc9
+0000            459   _TR2            BIT 0xca
+0000            460   _T2SPLIT        BIT 0xcb
+0000            461   _TF2CEN         BIT 0xcc
+0000            462   _TF2LEN         BIT 0xcd
+0000            463   _TF2L           BIT 0xce
+0000            464   _TF2H           BIT 0xcf
+0000            465   _T4XCLK0        BIT 0x98
+0000            466   _T4XCLK1        BIT 0x99
+0000            467   _TR4            BIT 0x9a
+0000            468   _T4SPLIT        BIT 0x9b
+0000            469   _TF4CEN         BIT 0x9c
+0000            470   _TF4LEN         BIT 0x9d
+0000            471   _TF4L           BIT 0x9e
+0000            472   _TF4H           BIT 0x9f
+0000            473   _T5XCLK0        BIT 0xc0
+0000            474   _T5XCLK1        BIT 0xc1
+0000            475   _TR5            BIT 0xc2
+0000            476   _T5SPLIT        BIT 0xc3
+0000            477   _TF5CEN         BIT 0xc4
+0000            478   _TF5LEN         BIT 0xc5
+0000            479   _TF5L           BIT 0xc6
+0000            480   _TF5H           BIT 0xc7
+0000            481   _RIE            BIT 0xd8
+0000            482   _RXTO0          BIT 0xd9
+0000            483   _RXTO1          BIT 0xda
+0000            484   _RFRQ           BIT 0xdb
+0000            485   _TIE            BIT 0xdc
+0000            486   _TXHOLD         BIT 0xdd
+0000            487   _TXNF1          BIT 0xde
+0000            488   _TFRQ           BIT 0xdf
+0000            489   ;--------------------------------------------------------
+0000            490   ; overlayable register banks
+0000            491   ;--------------------------------------------------------
+0000            492            rbank0 segment data overlay
+0000            493            rbank1 segment data overlay
+0000            494            rbank2 segment data overlay
+0000            495            rbank3 segment data overlay
+0000            496   ;--------------------------------------------------------
+0000            497   ; internal ram data
+0000            498   ;--------------------------------------------------------
+0000            499            rseg R_DSEG
+0000            500   _pwm_count:
+0000            501            ds 1
+0001            502   _M1_temp:
+0001            503            ds 2
+0003            504   _M2_temp:
+0003            505            ds 2
+0005            506   _M1_duty:
+0005            507            ds 2
+0007            508   _M2_duty:
+0007            509            ds 2
+0009            510   _x_absolute:
+0009            511            ds 2
+000B            512   _y_absolute:
+000B            513            ds 2
+000D            514   _no_signal0_count:
+000D            515            ds 2
+000F            516   _no_signal1_count:
+000F            517            ds 2
+0011            518   _main_temp:
+0011            519            ds 2
+0013            520   _serial_temp:
+0013            521            ds 1
+0014            522   _Serial_ISR_i_1_51:
+0014            523            ds 2
+0016            524   ;--------------------------------------------------------
+0016            525   ; overlayable items in internal ram 
+0016            526   ;--------------------------------------------------------
+0000            527            rseg R_OSEG
+0000            528   ;--------------------------------------------------------
+0000            529   ; indirectly addressable internal ram data
+0000            530   ;--------------------------------------------------------
+0000            531            rseg R_ISEG
+0000            532   ;--------------------------------------------------------
+0000            533   ; absolute internal ram data
+0000            534   ;--------------------------------------------------------
+0000            535            DSEG
+0000            536   ;--------------------------------------------------------
+0000            537   ; bit data
+0000            538   ;--------------------------------------------------------
+0000            539            rseg R_BSEG
+0000            540   _M1_dir:
+0000            541            DBIT    1
+0001            542   _M2_dir:
+0001            543            DBIT    1
+0002            544   _x_dir:
+0002            545            DBIT    1
+0003            546   _y_dir:
+0003            547            DBIT    1
+0004            548   _fn1:
+0004            549            DBIT    1
+0005            550   _fn2:
+0005            551            DBIT    1
+0006            552   _fn3:
+0006            553            DBIT    1
+0007            554   _fn4:
+0007            555            DBIT    1
+0008            556   _Serial_ISR_parity_1_51:
+0008            557            DBIT    1
+0009            558   _Serial_ISR_sloc0_1_0:
+0009            559            DBIT    1
+000A            560   ;--------------------------------------------------------
+000A            561   ; paged external ram data
+000A            562   ;--------------------------------------------------------
+0000            563            rseg R_PSEG
+0000            564   ;--------------------------------------------------------
+0000            565   ; external ram data
+0000            566   ;--------------------------------------------------------
+0000            567            rseg R_XSEG
+0000            568   ;--------------------------------------------------------
+0000            569   ; absolute external ram data
+0000            570   ;--------------------------------------------------------
+0000            571            XSEG
+0000            572   ;--------------------------------------------------------
+0000            573   ; external initialized ram data
+0000            574   ;--------------------------------------------------------
+0000            575            rseg R_IXSEG
+0000            576            rseg R_HOME
+0000            577            rseg R_GSINIT
+0000            578            rseg R_CSEG
+0000            579   ;--------------------------------------------------------
+0000            580   ; Reset entry point and interrupt vectors
+0000            581   ;--------------------------------------------------------
+0000            582            CSEG at 0x0000
+0000 020100     583            ljmp    _crt0
+0023            584            CSEG at 0x0023
+0023 020100     585            ljmp    _Serial_ISR
+002B            586            CSEG at 0x002b
+002B 020100     587            ljmp    _Timer2_ISR
+002E            588   ;--------------------------------------------------------
+002E            589   ; global & static initialisations
+002E            590   ;--------------------------------------------------------
+0000            591            rseg R_HOME
+0000            592            rseg R_GSINIT
+0000            593            rseg R_GSINIT
+0000            594   ;--------------------------------------------------------
+0000            595   ; data variables initialization
+0000            596   ;--------------------------------------------------------
+0000            597            rseg R_DINIT
+0000            598   ;        C:\Users\root\mcar\Robot copy.c:24: unsigned char pwm_count = 0;
+0000 757000     599            mov     _pwm_count,#0x00
+0003            600   ;        C:\Users\root\mcar\Robot copy.c:25: volatile short M1_temp = 0;
+0003 E4         601            clr     a
+0004 F530       602            mov     _M1_temp,a
+0006 F531       603            mov     (_M1_temp + 1),a
+0008            604   ;        C:\Users\root\mcar\Robot copy.c:26: volatile short M2_temp = 0;
+0008 E4         605            clr     a
+0009 F5F0       606            mov     _M2_temp,a
+000B F5F1       607            mov     (_M2_temp + 1),a
+000D            608   ;        C:\Users\root\mcar\Robot copy.c:27: volatile short M1_duty = 0;
+000D E4         609            clr     a
+000E F5B0       610            mov     _M1_duty,a
+0010 F5B1       611            mov     (_M1_duty + 1),a
+0012            612   ;        C:\Users\root\mcar\Robot copy.c:28: volatile short M2_duty = 0;
+0012 E4         613            clr     a
+0013 F570       614            mov     _M2_duty,a
+0015 F571       615            mov     (_M2_duty + 1),a
+0017            616   ;        C:\Users\root\mcar\Robot copy.c:29: volatile unsigned short x_absolute = 0;
+0017 E4         617            clr     a
+0018 F530       618            mov     _x_absolute,a
+001A F531       619            mov     (_x_absolute + 1),a
+001C            620   ;        C:\Users\root\mcar\Robot copy.c:30: volatile unsigned short y_absolute = 0;
+001C E4         621            clr     a
+001D F5F0       622            mov     _y_absolute,a
+001F F5F1       623            mov     (_y_absolute + 1),a
+0021            624   ;        C:\Users\root\mcar\Robot copy.c:41: volatile short no_signal0_count = 0;
+0021 E4         625            clr     a
+0022 F5B0       626            mov     _no_signal0_count,a
+0024 F5B1       627            mov     (_no_signal0_count + 1),a
+0026            628   ;        C:\Users\root\mcar\Robot copy.c:42: volatile short no_signal1_count = 0;
+0026 E4         629            clr     a
+0027 F560       630            mov     _no_signal1_count,a
+0029 F561       631            mov     (_no_signal1_count + 1),a
+002B            632   ;        C:\Users\root\mcar\Robot copy.c:44: unsigned int main_temp = 0;
+002B E4         633            clr     a
+002C F510       634            mov     _main_temp,a
+002E F511       635            mov     (_main_temp + 1),a
+0030            636   ;        C:\Users\root\mcar\Robot copy.c:31: volatile bit M1_dir = 0;
+0030 C2D0       637            clr     _M1_dir
+0032            638   ;        C:\Users\root\mcar\Robot copy.c:32: volatile bit M2_dir = 0;
+0032 C290       639            clr     _M2_dir
+0034            640   ;        C:\Users\root\mcar\Robot copy.c:33: volatile bit x_dir = 0;
+0034 C250       641            clr     _x_dir
+0036            642   ;        C:\Users\root\mcar\Robot copy.c:34: volatile bit y_dir = 0;
+0036 C210       643            clr     _y_dir
+0038            644   ;        C:\Users\root\mcar\Robot copy.c:36: volatile bit fn1 = 0;
+0038 C2D0       645            clr     _fn1
+003A            646   ;        C:\Users\root\mcar\Robot copy.c:37: volatile bit fn2 = 0;
+003A C290       647            clr     _fn2
+003C            648   ;        C:\Users\root\mcar\Robot copy.c:38: volatile bit fn3 = 0;
+003C C250       649            clr     _fn3
+003E            650   ;        C:\Users\root\mcar\Robot copy.c:39: volatile bit fn4 = 0;
+003E C210       651            clr     _fn4
+0040            652            ; The linker places a 'ret' at the end of segment R_DINIT.
+0040            653   ;--------------------------------------------------------
+0040            654   ; code
+0040            655   ;--------------------------------------------------------
+0000            656            rseg R_CSEG
+0000            657   ;------------------------------------------------------------
+0000            658   ;Allocation info for local variables in function '_c51_external_startup'
+0000            659   ;------------------------------------------------------------
+0000            660   ;------------------------------------------------------------
+0000            661   ;        C:\Users\root\mcar\Robot copy.c:47: char _c51_external_startup (void)
+0000            662   ;        -----------------------------------------
+0000            663   ;         function _c51_external_startup
+0000            664   ;        -----------------------------------------
+0000            665   __c51_external_startup:
+0000            666            using   0
+0000            667   ;        C:\Users\root\mcar\Robot copy.c:50: SFRPAGE = 0x00;
+0000 75A700     668            mov     _SFRPAGE,#0x00
+0003            669   ;        C:\Users\root\mcar\Robot copy.c:51: WDTCN = 0xDE; //First key
+0003 7597DE     670            mov     _WDTCN,#0xDE
+0006            671   ;        C:\Users\root\mcar\Robot copy.c:52: WDTCN = 0xAD; //Second key
+0006 7597AD     672            mov     _WDTCN,#0xAD
+0009            673   ;        C:\Users\root\mcar\Robot copy.c:54: VDM0CN=0x80;       // enable VDD monitor
+0009 75FF80     674            mov     _VDM0CN,#0x80
+000C            675   ;        C:\Users\root\mcar\Robot copy.c:55: RSTSRC=0x02|0x04;  // Enable reset on missing clock detector and VDD
+000C 75EF06     676            mov     _RSTSRC,#0x06
+000F            677   ;        C:\Users\root\mcar\Robot copy.c:62: SFRPAGE = 0x10;
+000F 75A710     678            mov     _SFRPAGE,#0x10
+0012            679   ;        C:\Users\root\mcar\Robot copy.c:63: PFE0CN  = 0x20; // SYSCLK < 75 MHz.
+0012 75C120     680            mov     _PFE0CN,#0x20
+0015            681   ;        C:\Users\root\mcar\Robot copy.c:64: SFRPAGE = 0x00;
+0015 75A700     682            mov     _SFRPAGE,#0x00
+0018            683   ;        C:\Users\root\mcar\Robot copy.c:85: CLKSEL = 0x00;
+0018 75A900     684            mov     _CLKSEL,#0x00
+001B            685   ;        C:\Users\root\mcar\Robot copy.c:86: CLKSEL = 0x00;
+001B 75A900     686            mov     _CLKSEL,#0x00
+001E            687   ;        C:\Users\root\mcar\Robot copy.c:87: while ((CLKSEL & 0x80) == 0);
+001E            688   L002001?:
+001E E5A9       689            mov     a,_CLKSEL
+0020 30E7A0     690            jnb     acc.7,L002001?
+0023            691   ;        C:\Users\root\mcar\Robot copy.c:88: CLKSEL = 0x03;
+0023 75A903     692            mov     _CLKSEL,#0x03
+0026            693   ;        C:\Users\root\mcar\Robot copy.c:89: CLKSEL = 0x03;
+0026 75A903     694            mov     _CLKSEL,#0x03
+0029            695   ;        C:\Users\root\mcar\Robot copy.c:90: while ((CLKSEL & 0x80) == 0);
+0029            696   L002004?:
+0029 E5A9       697            mov     a,_CLKSEL
+002B 30E720     698            jnb     acc.7,L002004?
+002E            699   ;        C:\Users\root\mcar\Robot copy.c:95: P0MDOUT |= 0x10; // Enable UART0 TX as push-pull output
+002E 43A410     700            orl     _P0MDOUT,#0x10
+0031            701   ;        C:\Users\root\mcar\Robot copy.c:96: XBR0     = 0x01; // Enable UART0 on P0.4(TX) and P0.5(RX)
+0031 75E101     702            mov     _XBR0,#0x01
+0034            703   ;        C:\Users\root\mcar\Robot copy.c:97: XBR1     = 0X00;
+0034 75E200     704            mov     _XBR1,#0x00
+0037            705   ;        C:\Users\root\mcar\Robot copy.c:98: XBR2     = 0x40; // Enable crossbar and weak pull-ups
+0037 75E340     706            mov     _XBR2,#0x40
+003A            707   ;        C:\Users\root\mcar\Robot copy.c:104: SCON0 = 0x10;
+003A 759810     708            mov     _SCON0,#0x10
+003D            709   ;        C:\Users\root\mcar\Robot copy.c:105: TH1 = 0x100-((SYSCLK/BAUDRATE)/(2L*12L));
+003D 758DE6     710            mov     _TH1,#0xE6
+0040            711   ;        C:\Users\root\mcar\Robot copy.c:106: TL1 = TH1;      // Init Timer1
+0040 858D8B     712            mov     _TL1,_TH1
+0043            713   ;        C:\Users\root\mcar\Robot copy.c:107: TMOD &= ~0xf0;  // TMOD: timer 1 in 8-bit auto-reload
+0043 53890F     714            anl     _TMOD,#0x0F
+0046            715   ;        C:\Users\root\mcar\Robot copy.c:108: TMOD |=  0x20;
+0046 438920     716            orl     _TMOD,#0x20
+0049            717   ;        C:\Users\root\mcar\Robot copy.c:109: TR1 = 1; // START Timer1
+0049 D28E       718            setb    _TR1
+004B            719   ;        C:\Users\root\mcar\Robot copy.c:111: TI = 1;  // Indicate TX0 ready
+004B D299       720            setb    _TI
+004D            721   ;        C:\Users\root\mcar\Robot copy.c:114: TMR2CN0=0x00;   // Stop Timer2; Clear TF2;
+004D 75C800     722            mov     _TMR2CN0,#0x00
+0050            723   ;        C:\Users\root\mcar\Robot copy.c:115: CKCON0|=0b_0001_0000; // Timer 2 uses the system clock
+0050 438E10     724            orl     _CKCON0,#0x10
+0053            725   ;        C:\Users\root\mcar\Robot copy.c:116: TMR2RL=(0x10000L-(SYSCLK/10000L)); // Initialize reload value
+0053 75CAE0     726            mov     _TMR2RL,#0xE0
+0056 75CBE3     727            mov     (_TMR2RL >> 8),#0xE3
+0059            728   ;        C:\Users\root\mcar\Robot copy.c:117: TMR2=0xffff;   // Set to reload immediately
+0059 75CEFF     729            mov     _TMR2,#0xFF
+005C 75CFFF     730            mov     (_TMR2 >> 8),#0xFF
+005F            731   ;        C:\Users\root\mcar\Robot copy.c:118: ET2=1;         // Enable Timer2 interrupts
+005F D2AD       732            setb    _ET2
+0061            733   ;        C:\Users\root\mcar\Robot copy.c:119: TR2=1;         // Start Timer2 (TMR2CN is bit addressable)
+0061 D2CA       734            setb    _TR2
+0063            735   ;        C:\Users\root\mcar\Robot copy.c:121: EA=1; // Enable interrupts
+0063 D2AF       736            setb    _EA
+0065            737   ;        C:\Users\root\mcar\Robot copy.c:124: return 0;
+0065 758200     738            mov     dpl,#0x00
+0068 22         739            ret
+0069            740   ;------------------------------------------------------------
+0069            741   ;Allocation info for local variables in function 'Timer2_ISR'
+0069            742   ;------------------------------------------------------------
+0069            743   ;------------------------------------------------------------
+0069            744   ;        C:\Users\root\mcar\Robot copy.c:127: void Timer2_ISR (void) interrupt 5 using 2
+0069            745   ;        -----------------------------------------
+0069            746   ;         function Timer2_ISR
+0069            747   ;        -----------------------------------------
+0069            748   _Timer2_ISR:
+0069            749            using   2
+0069 C0E0       750            push    acc
+006B C0F0       751            push    b
+006D C0D0       752            push    psw
+006F 75D010     753            mov     psw,#0x10
+0072            754   ;        C:\Users\root\mcar\Robot copy.c:129: TF2H = 0; // Clear Timer2 interrupt flag
+0072 C2CF       755            clr     _TF2H
+0074            756   ;        C:\Users\root\mcar\Robot copy.c:131: pwm_count++;
+0074 0570       757            inc     _pwm_count
+0076            758   ;        C:\Users\root\mcar\Robot copy.c:132: if(pwm_count>=100) pwm_count=0;
+0076 749C       759            mov     a,#0x100 - 0x64
+0078 2570       760            add     a,_pwm_count
+007A 5001       761            jnc     L003002?
+007C 757000     762            mov     _pwm_count,#0x00
+007F            763   L003002?:
+007F            764   ;        C:\Users\root\mcar\Robot copy.c:134: if(M1_dir)
+007F 30D060     765            jnb     _M1_dir,L003004?
+0082            766   ;        C:\Users\root\mcar\Robot copy.c:136: M1FWD = 0;
+0082 C2A1       767            clr     _P2_1
+0084            768   ;        C:\Users\root\mcar\Robot copy.c:137: M1BWD =pwm_count>=M1_duty ? 0 : 1;
+0084 AA70       769            mov     r2,_pwm_count
+0086 7B00       770            mov     r3,#0x00
+0088 C3         771            clr     c
+0089 EA         772            mov     a,r2
+008A 95B0       773            subb    a,_M1_duty
+008C EB         774            mov     a,r3
+008D 6480       775            xrl     a,#0x80
+008F 85B1F0     776            mov     b,(_M1_duty + 1)
+0092 63F080     777            xrl     b,#0x80
+0095 95F0       778            subb    a,b
+0097 92A2       779            mov     _P2_2,c
+0099 8001       780            sjmp    L003005?
+009B            781   L003004?:
+009B            782   ;        C:\Users\root\mcar\Robot copy.c:139: M1BWD = 0;
+009B C2A2       783            clr     _P2_2
+009D            784   ;        C:\Users\root\mcar\Robot copy.c:140: M1FWD =pwm_count>=M1_duty ? 0 : 1;
+009D AA70       785            mov     r2,_pwm_count
+009F 7B00       786            mov     r3,#0x00
+00A1 C3         787            clr     c
+00A2 EA         788            mov     a,r2
+00A3 95B0       789            subb    a,_M1_duty
+00A5 EB         790            mov     a,r3
+00A6 6480       791            xrl     a,#0x80
+00A8 85B1F0     792            mov     b,(_M1_duty + 1)
+00AB 63F080     793            xrl     b,#0x80
+00AE 95F0       794            subb    a,b
+00B0 92A1       795            mov     _P2_1,c
+00B2            796   L003005?:
+00B2            797   ;        C:\Users\root\mcar\Robot copy.c:142: if(M2_dir)
+00B2 3090E0     798            jnb     _M2_dir,L003007?
+00B5            799   ;        C:\Users\root\mcar\Robot copy.c:144: M2FWD = 0;
+00B5 C2A3       800            clr     _P2_3
+00B7            801   ;        C:\Users\root\mcar\Robot copy.c:145: M2BWD =pwm_count>=M2_duty ? 0 : 1;
+00B7 AA70       802            mov     r2,_pwm_count
+00B9 7B00       803            mov     r3,#0x00
+00BB C3         804            clr     c
+00BC EA         805            mov     a,r2
+00BD 9570       806            subb    a,_M2_duty
+00BF EB         807            mov     a,r3
+00C0 6480       808            xrl     a,#0x80
+00C2 8571F0     809            mov     b,(_M2_duty + 1)
+00C5 63F080     810            xrl     b,#0x80
+00C8 95F0       811            subb    a,b
+00CA 92A4       812            mov     _P2_4,c
+00CC 8001       813            sjmp    L003009?
+00CE            814   L003007?:
+00CE            815   ;        C:\Users\root\mcar\Robot copy.c:147: M2BWD = 0;
+00CE C2A4       816            clr     _P2_4
+00D0            817   ;        C:\Users\root\mcar\Robot copy.c:148: M2FWD =pwm_count>=M2_duty ? 0 : 1;
+00D0 AA70       818            mov     r2,_pwm_count
+00D2 7B00       819            mov     r3,#0x00
+00D4 C3         820            clr     c
+00D5 EA         821            mov     a,r2
+00D6 9570       822            subb    a,_M2_duty
+00D8 EB         823            mov     a,r3
+00D9 6480       824            xrl     a,#0x80
+00DB 8571F0     825            mov     b,(_M2_duty + 1)
+00DE 63F080     826            xrl     b,#0x80
+00E1 95F0       827            subb    a,b
+00E3 92A3       828            mov     _P2_3,c
+00E5            829   L003009?:
+00E5 D0D0       830            pop     psw
+00E7 D0F0       831            pop     b
+00E9 D0E0       832            pop     acc
+00EB 32         833            reti
+00EC            834   ;        eliminated unneeded push/pop dpl
+00EC            835   ;        eliminated unneeded push/pop dph
+00EC            836   ;------------------------------------------------------------
+00EC            837   ;Allocation info for local variables in function 'Serial_ISR'
+00EC            838   ;------------------------------------------------------------
+00EC            839   ;i                         Allocated with name '_Serial_ISR_i_1_51'
+00EC            840   ;------------------------------------------------------------
+00EC            841   ;        C:\Users\root\mcar\Robot copy.c:153: void Serial_ISR (void) interrupt 4 using 3
+00EC            842   ;        -----------------------------------------
+00EC            843   ;         function Serial_ISR
+00EC            844   ;        -----------------------------------------
+00EC            845   _Serial_ISR:
+00EC            846            using   3
+00EC C0E0       847            push    acc
+00EE C0D0       848            push    psw
+00F0 75D018     849            mov     psw,#0x18
+00F3            850   ;        C:\Users\root\mcar\Robot copy.c:158: if(TI)
+00F3            851   ;        C:\Users\root\mcar\Robot copy.c:160: TI = 0;
+00F3 109960     852            jbc     _TI,L004021?
+00F6 8001       853            sjmp    L004002?
+00F8            854   L004021?:
+00F8            855   ;        C:\Users\root\mcar\Robot copy.c:161: return;
+00F8 020100     856            ljmp    L004011?
+00FB            857   L004002?:
+00FB            858   ;        C:\Users\root\mcar\Robot copy.c:164: RI = 0;
+00FB C298       859            clr     _RI
+00FD            860   ;        C:\Users\root\mcar\Robot copy.c:167: parity = 0;
+00FD C2D0       861            clr     _Serial_ISR_parity_1_51
+00FF            862   ;        C:\Users\root\mcar\Robot copy.c:168: serial_temp = SBUF;
+00FF 859930     863            mov     _serial_temp,_SBUF
+0102            864   ;        C:\Users\root\mcar\Robot copy.c:169: for (i = 0; i < 8; i++)            //compute total number of 1's in the byte
+0102 758008     865            mov     _Serial_ISR_i_1_51,#0x08
+0105 E4         866            clr     a
+0106 F581       867            mov     (_Serial_ISR_i_1_51 + 1),a
+0108            868   L004010?:
+0108            869   ;        C:\Users\root\mcar\Robot copy.c:171: parity = (serial_temp % 2) ? !parity : parity;
+0108 E530       870            mov     a,_serial_temp
+010A 30E060     871            jnb     acc.0,L004013?
+010D A2D0       872            mov     c,_Serial_ISR_parity_1_51
+010F B3         873            cpl     c
+0110 9220       874            mov     _Serial_ISR_sloc0_1_0,c
+0112 8001       875            sjmp    L004014?
+0114            876   L004013?:
+0114 A2D0       877            mov     c,_Serial_ISR_parity_1_51
+0116 9220       878            mov     _Serial_ISR_sloc0_1_0,c
+0118            879   L004014?:
+0118 A220       880            mov     c,_Serial_ISR_sloc0_1_0
+011A 92D0       881            mov     _Serial_ISR_parity_1_51,c
+011C            882   ;        C:\Users\root\mcar\Robot copy.c:172: serial_temp/= 2;
+011C E530       883            mov     a,_serial_temp
+011E C3         884            clr     c
+011F 13         885            rrc     a
+0120 F530       886            mov     _serial_temp,a
+0122 1580       887            dec     _Serial_ISR_i_1_51
+0124 74FF       888            mov     a,#0xff
+0126 B580E0     889            cjne    a,_Serial_ISR_i_1_51,L004023?
+0129 1581       890            dec     (_Serial_ISR_i_1_51 + 1)
+012B            891   L004023?:
+012B            892   ;        C:\Users\root\mcar\Robot copy.c:169: for (i = 0; i < 8; i++)            //compute total number of 1's in the byte
+012B E580       893            mov     a,_Serial_ISR_i_1_51
+012D 4581       894            orl     a,(_Serial_ISR_i_1_51 + 1)
+012F 7001       895            jnz     L004010?
+0131 758008     896            mov     _Serial_ISR_i_1_51,#0x08
+0134 E4         897            clr     a
+0135 F581       898            mov     (_Serial_ISR_i_1_51 + 1),a
+0137            899   ;        C:\Users\root\mcar\Robot copy.c:174: if(!parity) return;                        //if odd parity not satisfied, discard byte
+0137 20D020     900            jb      _Serial_ISR_parity_1_51,L004004?
+013A 8001       901            sjmp    L004011?
+013C            902   L004004?:
+013C            903   ;        C:\Users\root\mcar\Robot copy.c:177: serial_temp = SBUF;
+013C            904   ;        C:\Users\root\mcar\Robot copy.c:178: if(serial_temp % 2 == 0)
+013C E599       905            mov     a,_SBUF
+013E F530       906            mov     _serial_temp,a
+0140 20E060     907            jb      acc.0,L004006?
+0143            908   ;        C:\Users\root\mcar\Robot copy.c:180: no_signal0_count = 0;
+0143 E4         909            clr     a
+0144 F5B0       910            mov     _no_signal0_count,a
+0146 F5B1       911            mov     (_no_signal0_count + 1),a
+0148            912   ;        C:\Users\root\mcar\Robot copy.c:181: serial_temp/= 2;
+0148 E530       913            mov     a,_serial_temp
+014A C3         914            clr     c
+014B 13         915            rrc     a
+014C            916   ;        C:\Users\root\mcar\Robot copy.c:182: fn2 = serial_temp % 2;
+014C F530       917            mov     _serial_temp,a
+014E 13         918            rrc     a
+014F 9290       919            mov     _fn2,c
+0151            920   ;        C:\Users\root\mcar\Robot copy.c:183: serial_temp/= 2;
+0151 E530       921            mov     a,_serial_temp
+0153 C3         922            clr     c
+0154 13         923            rrc     a
+0155            924   ;        C:\Users\root\mcar\Robot copy.c:184: fn1 = serial_temp % 2;
+0155 F530       925            mov     _serial_temp,a
+0157 13         926            rrc     a
+0158 92D0       927            mov     _fn1,c
+015A            928   ;        C:\Users\root\mcar\Robot copy.c:185: serial_temp/= 2;
+015A E530       929            mov     a,_serial_temp
+015C C3         930            clr     c
+015D 13         931            rrc     a
+015E F530       932            mov     _serial_temp,a
+0160            933   ;        C:\Users\root\mcar\Robot copy.c:186: y_absolute = serial_temp % 8;
+0160 7407       934            mov     a,#0x07
+0162 5530       935            anl     a,_serial_temp
+0164 FA         936            mov     r2,a
+0165 8AF0       937            mov     _y_absolute,r2
+0167 75F100     938            mov     (_y_absolute + 1),#0x00
+016A            939   ;        C:\Users\root\mcar\Robot copy.c:187: serial_temp/= 8;
+016A E530       940            mov     a,_serial_temp
+016C C4         941            swap    a
+016D 23         942            rl      a
+016E 541F       943            anl     a,#0x1f
+0170            944   ;        C:\Users\root\mcar\Robot copy.c:188: y_dir = serial_temp % 2;
+0170 F530       945            mov     _serial_temp,a
+0172 13         946            rrc     a
+0173 9210       947            mov     _y_dir,c
+0175 8001       948            sjmp    L004011?
+0177            949   L004006?:
+0177            950   ;        C:\Users\root\mcar\Robot copy.c:190: no_signal1_count = 0;
+0177 E4         951            clr     a
+0178 F560       952            mov     _no_signal1_count,a
+017A F561       953            mov     (_no_signal1_count + 1),a
+017C            954   ;        C:\Users\root\mcar\Robot copy.c:191: serial_temp/= 2;
+017C E530       955            mov     a,_serial_temp
+017E C3         956            clr     c
+017F 13         957            rrc     a
+0180            958   ;        C:\Users\root\mcar\Robot copy.c:192: fn4 = serial_temp % 2;
+0180 F530       959            mov     _serial_temp,a
+0182 13         960            rrc     a
+0183 9210       961            mov     _fn4,c
+0185            962   ;        C:\Users\root\mcar\Robot copy.c:193: serial_temp/= 2;
+0185 E530       963            mov     a,_serial_temp
+0187 C3         964            clr     c
+0188 13         965            rrc     a
+0189            966   ;        C:\Users\root\mcar\Robot copy.c:194: fn3 = serial_temp % 2;
+0189 F530       967            mov     _serial_temp,a
+018B 13         968            rrc     a
+018C 9250       969            mov     _fn3,c
+018E            970   ;        C:\Users\root\mcar\Robot copy.c:195: serial_temp/= 2;
+018E E530       971            mov     a,_serial_temp
+0190 C3         972            clr     c
+0191 13         973            rrc     a
+0192 F530       974            mov     _serial_temp,a
+0194            975   ;        C:\Users\root\mcar\Robot copy.c:196: x_absolute = serial_temp % 8;
+0194 7407       976            mov     a,#0x07
+0196 5530       977            anl     a,_serial_temp
+0198 FA         978            mov     r2,a
+0199 8A30       979            mov     _x_absolute,r2
+019B 753100     980            mov     (_x_absolute + 1),#0x00
+019E            981   ;        C:\Users\root\mcar\Robot copy.c:197: serial_temp/= 8;
+019E E530       982            mov     a,_serial_temp
+01A0 C4         983            swap    a
+01A1 23         984            rl      a
+01A2 541F       985            anl     a,#0x1f
+01A4            986   ;        C:\Users\root\mcar\Robot copy.c:198: x_dir = serial_temp % 2;
+01A4 F530       987            mov     _serial_temp,a
+01A6 13         988            rrc     a
+01A7 9250       989            mov     _x_dir,c
+01A9            990   L004011?:
+01A9 D0D0       991            pop     psw
+01AB D0E0       992            pop     acc
+01AD 32         993            reti
+01AE            994   ;        eliminated unneeded push/pop dpl
+01AE            995   ;        eliminated unneeded push/pop dph
+01AE            996   ;        eliminated unneeded push/pop b
+01AE            997   ;------------------------------------------------------------
+01AE            998   ;Allocation info for local variables in function 'calculate_DC'
+01AE            999   ;------------------------------------------------------------
+01AE           1000   ;------------------------------------------------------------
+01AE           1001   ;        C:\Users\root\mcar\Robot copy.c:203: void calculate_DC(void)
+01AE           1002   ;        -----------------------------------------
+01AE           1003   ;         function calculate_DC
+01AE           1004   ;        -----------------------------------------
+01AE           1005   _calculate_DC:
+01AE           1006            using   0
+01AE           1007   ;        C:\Users\root\mcar\Robot copy.c:205: if (y_absolute == 0)
+01AE E5F0      1008            mov     a,_y_absolute
+01B0 45F1      1009            orl     a,(_y_absolute + 1)
+01B2 7001      1010            jnz     L005005?
+01B4           1011   ;        C:\Users\root\mcar\Robot copy.c:207: M1_temp = x_absolute * 7;          //turn
+01B4 853000    1012            mov     __mulint_PARM_2,_x_absolute
+01B7 853101    1013            mov     (__mulint_PARM_2 + 1),(_x_absolute + 1)
+01BA 900007    1014            mov     dptr,#0x0007
+01BD 120100    1015            lcall   __mulint
+01C0 858230    1016            mov     _M1_temp,dpl
+01C3 858331    1017            mov     (_M1_temp + 1),dph
+01C6           1018   ;        C:\Users\root\mcar\Robot copy.c:208: M2_temp = x_absolute * 7;
+01C6 853000    1019            mov     __mulint_PARM_2,_x_absolute
+01C9 853101    1020            mov     (__mulint_PARM_2 + 1),(_x_absolute + 1)
+01CC 900007    1021            mov     dptr,#0x0007
+01CF 120100    1022            lcall   __mulint
+01D2 8582F0    1023            mov     _M2_temp,dpl
+01D5 8583F1    1024            mov     (_M2_temp + 1),dph
+01D8           1025   ;        C:\Users\root\mcar\Robot copy.c:209: M1_dir =  x_dir;
+01D8 A250      1026            mov     c,_x_dir
+01DA 92D0      1027            mov     _M1_dir,c
+01DC           1028   ;        C:\Users\root\mcar\Robot copy.c:210: M2_dir = !x_dir;
+01DC A250      1029            mov     c,_x_dir
+01DE B3        1030            cpl     c
+01DF 9290      1031            mov     _M2_dir,c
+01E1 020100    1032            ljmp    L005006?
+01E4           1033   L005005?:
+01E4           1034   ;        C:\Users\root\mcar\Robot copy.c:212: main_temp = y_absolute * 100;
+01E4 85F000    1035            mov     __mulint_PARM_2,_y_absolute
+01E7 85F101    1036            mov     (__mulint_PARM_2 + 1),(_y_absolute + 1)
+01EA 900064    1037            mov     dptr,#0x0064
+01ED 120100    1038            lcall   __mulint
+01F0 858210    1039            mov     _main_temp,dpl
+01F3 858311    1040            mov     (_main_temp + 1),dph
+01F6           1041   ;        C:\Users\root\mcar\Robot copy.c:213: if (x_dir)
+01F6 2050E0    1042            jb      _x_dir,L005022?
+01F9 020100    1043            ljmp    L005002?
+01FC           1044   L005022?:
+01FC           1045   ;        C:\Users\root\mcar\Robot copy.c:215: M1_temp = (main_temp + main_temp * x_absolute / 10) / 7;
+01FC 853000    1046            mov     __mulint_PARM_2,_x_absolute
+01FF 853101    1047            mov     (__mulint_PARM_2 + 1),(_x_absolute + 1)
+0202 851082    1048            mov     dpl,_main_temp
+0205 851183    1049            mov     dph,(_main_temp + 1)
+0208 120100    1050            lcall   __mulint
+020B AA82      1051            mov     r2,dpl
+020D AB83      1052            mov     r3,dph
+020F 75000A    1053            mov     __divuint_PARM_2,#0x0A
+0212 E4        1054            clr     a
+0213 F501      1055            mov     (__divuint_PARM_2 + 1),a
+0215 8A82      1056            mov     dpl,r2
+0217 8B83      1057            mov     dph,r3
+0219 120100    1058            lcall   __divuint
+021C AA82      1059            mov     r2,dpl
+021E AB83      1060            mov     r3,dph
+0220 EA        1061            mov     a,r2
+0221 2510      1062            add     a,_main_temp
+0223 F582      1063            mov     dpl,a
+0225 EB        1064            mov     a,r3
+0226 3511      1065            addc    a,(_main_temp + 1)
+0228 F583      1066            mov     dph,a
+022A 750007    1067            mov     __divuint_PARM_2,#0x07
+022D E4        1068            clr     a
+022E F501      1069            mov     (__divuint_PARM_2 + 1),a
+0230 120100    1070            lcall   __divuint
+0233 858230    1071            mov     _M1_temp,dpl
+0236 858331    1072            mov     (_M1_temp + 1),dph
+0239           1073   ;        C:\Users\root\mcar\Robot copy.c:216: M2_temp = (main_temp - main_temp * x_absolute / 10) / 7;
+0239 853000    1074            mov     __mulint_PARM_2,_x_absolute
+023C 853101    1075            mov     (__mulint_PARM_2 + 1),(_x_absolute + 1)
+023F 851082    1076            mov     dpl,_main_temp
+0242 851183    1077            mov     dph,(_main_temp + 1)
+0245 120100    1078            lcall   __mulint
+0248 AA82      1079            mov     r2,dpl
+024A AB83      1080            mov     r3,dph
+024C 75000A    1081            mov     __divuint_PARM_2,#0x0A
+024F E4        1082            clr     a
+0250 F501      1083            mov     (__divuint_PARM_2 + 1),a
+0252 8A82      1084            mov     dpl,r2
+0254 8B83      1085            mov     dph,r3
+0256 120100    1086            lcall   __divuint
+0259 AA82      1087            mov     r2,dpl
+025B AB83      1088            mov     r3,dph
+025D E510      1089            mov     a,_main_temp
+025F C3        1090            clr     c
+0260 9A        1091            subb    a,r2
+0261 F582      1092            mov     dpl,a
+0263 E511      1093            mov     a,(_main_temp + 1)
+0265 9B        1094            subb    a,r3
+0266 F583      1095            mov     dph,a
+0268 750007    1096            mov     __divuint_PARM_2,#0x07
+026B E4        1097            clr     a
+026C F501      1098            mov     (__divuint_PARM_2 + 1),a
+026E 120100    1099            lcall   __divuint
+0271 8582F0    1100            mov     _M2_temp,dpl
+0274 8583F1    1101            mov     (_M2_temp + 1),dph
+0277 020100    1102            ljmp    L005003?
+027A           1103   L005002?:
+027A           1104   ;        C:\Users\root\mcar\Robot copy.c:218: M1_temp = (main_temp - main_temp * x_absolute / 10) / 7;
+027A 853000    1105            mov     __mulint_PARM_2,_x_absolute
+027D 853101    1106            mov     (__mulint_PARM_2 + 1),(_x_absolute + 1)
+0280 851082    1107            mov     dpl,_main_temp
+0283 851183    1108            mov     dph,(_main_temp + 1)
+0286 120100    1109            lcall   __mulint
+0289 AA82      1110            mov     r2,dpl
+028B AB83      1111            mov     r3,dph
+028D 75000A    1112            mov     __divuint_PARM_2,#0x0A
+0290 E4        1113            clr     a
+0291 F501      1114            mov     (__divuint_PARM_2 + 1),a
+0293 8A82      1115            mov     dpl,r2
+0295 8B83      1116            mov     dph,r3
+0297 120100    1117            lcall   __divuint
+029A AA82      1118            mov     r2,dpl
+029C AB83      1119            mov     r3,dph
+029E E510      1120            mov     a,_main_temp
+02A0 C3        1121            clr     c
+02A1 9A        1122            subb    a,r2
+02A2 F582      1123            mov     dpl,a
+02A4 E511      1124            mov     a,(_main_temp + 1)
+02A6 9B        1125            subb    a,r3
+02A7 F583      1126            mov     dph,a
+02A9 750007    1127            mov     __divuint_PARM_2,#0x07
+02AC E4        1128            clr     a
+02AD F501      1129            mov     (__divuint_PARM_2 + 1),a
+02AF 120100    1130            lcall   __divuint
+02B2 858230    1131            mov     _M1_temp,dpl
+02B5 858331    1132            mov     (_M1_temp + 1),dph
+02B8           1133   ;        C:\Users\root\mcar\Robot copy.c:219: M2_temp = (main_temp + main_temp * x_absolute / 10) / 7;
+02B8 853000    1134            mov     __mulint_PARM_2,_x_absolute
+02BB 853101    1135            mov     (__mulint_PARM_2 + 1),(_x_absolute + 1)
+02BE 851082    1136            mov     dpl,_main_temp
+02C1 851183    1137            mov     dph,(_main_temp + 1)
+02C4 120100    1138            lcall   __mulint
+02C7 AA82      1139            mov     r2,dpl
+02C9 AB83      1140            mov     r3,dph
+02CB 75000A    1141            mov     __divuint_PARM_2,#0x0A
+02CE E4        1142            clr     a
+02CF F501      1143            mov     (__divuint_PARM_2 + 1),a
+02D1 8A82      1144            mov     dpl,r2
+02D3 8B83      1145            mov     dph,r3
+02D5 120100    1146            lcall   __divuint
+02D8 AA82      1147            mov     r2,dpl
+02DA AB83      1148            mov     r3,dph
+02DC EA        1149            mov     a,r2
+02DD 2510      1150            add     a,_main_temp
+02DF F582      1151            mov     dpl,a
+02E1 EB        1152            mov     a,r3
+02E2 3511      1153            addc    a,(_main_temp + 1)
+02E4 F583      1154            mov     dph,a
+02E6 750007    1155            mov     __divuint_PARM_2,#0x07
+02E9 E4        1156            clr     a
+02EA F501      1157            mov     (__divuint_PARM_2 + 1),a
+02EC 120100    1158            lcall   __divuint
+02EF 8582F0    1159            mov     _M2_temp,dpl
+02F2 8583F1    1160            mov     (_M2_temp + 1),dph
+02F5           1161   L005003?:
+02F5           1162   ;        C:\Users\root\mcar\Robot copy.c:221: M1_temp = (M1_temp > 100) ? 100 : M1_temp;
+02F5 C3        1163            clr     c
+02F6 7464      1164            mov     a,#0x64
+02F8 9530      1165            subb    a,_M1_temp
+02FA E4        1166            clr     a
+02FB 6480      1167            xrl     a,#0x80
+02FD 8531F0    1168            mov     b,(_M1_temp + 1)
+0300 63F080    1169            xrl     b,#0x80
+0303 95F0      1170            subb    a,b
+0305 5001      1171            jnc     L005012?
+0307 7A64      1172            mov     r2,#0x64
+0309 7B00      1173            mov     r3,#0x00
+030B 8001      1174            sjmp    L005013?
+030D           1175   L005012?:
+030D AA30      1176            mov     r2,_M1_temp
+030F AB31      1177            mov     r3,(_M1_temp + 1)
+0311           1178   L005013?:
+0311 8A30      1179            mov     _M1_temp,r2
+0313 8B31      1180            mov     (_M1_temp + 1),r3
+0315           1181   ;        C:\Users\root\mcar\Robot copy.c:222: M2_temp = (M2_temp > 100) ? 100 : M2_temp;
+0315 C3        1182            clr     c
+0316 7464      1183            mov     a,#0x64
+0318 95F0      1184            subb    a,_M2_temp
+031A E4        1185            clr     a
+031B 6480      1186            xrl     a,#0x80
+031D 85F1F0    1187            mov     b,(_M2_temp + 1)
+0320 63F080    1188            xrl     b,#0x80
+0323 95F0      1189            subb    a,b
+0325 5001      1190            jnc     L005014?
+0327 7A64      1191            mov     r2,#0x64
+0329 7B00      1192            mov     r3,#0x00
+032B 8001      1193            sjmp    L005015?
+032D           1194   L005014?:
+032D AAF0      1195            mov     r2,_M2_temp
+032F ABF1      1196            mov     r3,(_M2_temp + 1)
+0331           1197   L005015?:
+0331 8AF0      1198            mov     _M2_temp,r2
+0333 8BF1      1199            mov     (_M2_temp + 1),r3
+0335           1200   ;        C:\Users\root\mcar\Robot copy.c:223: M1_dir = y_dir;
+0335 A210      1201            mov     c,_y_dir
+0337 92D0      1202            mov     _M1_dir,c
+0339           1203   ;        C:\Users\root\mcar\Robot copy.c:224: M2_dir = y_dir;
+0339 A210      1204            mov     c,_y_dir
+033B 9290      1205            mov     _M2_dir,c
+033D           1206   L005006?:
+033D           1207   ;        C:\Users\root\mcar\Robot copy.c:227: if (BOOST)
+033D 309030    1208            jnb     _fn2,L005008?
+0340           1209   ;        C:\Users\root\mcar\Robot copy.c:229: M1_duty = M1_temp;
+0340 8530B0    1210            mov     _M1_duty,_M1_temp
+0343 8531B1    1211            mov     (_M1_duty + 1),(_M1_temp + 1)
+0346           1212   ;        C:\Users\root\mcar\Robot copy.c:230: M2_duty = M2_temp;
+0346 85F070    1213            mov     _M2_duty,_M2_temp
+0349 85F171    1214            mov     (_M2_duty + 1),(_M2_temp + 1)
+034C 22        1215            ret
+034D           1216   L005008?:
+034D           1217   ;        C:\Users\root\mcar\Robot copy.c:232: M1_duty = M1_temp / 2;
+034D 750002    1218            mov     __divsint_PARM_2,#0x02
+0350 E4        1219            clr     a
+0351 F501      1220            mov     (__divsint_PARM_2 + 1),a
+0353 853082    1221            mov     dpl,_M1_temp
+0356 853183    1222            mov     dph,(_M1_temp + 1)
+0359 120100    1223            lcall   __divsint
+035C 8582B0    1224            mov     _M1_duty,dpl
+035F 8583B1    1225            mov     (_M1_duty + 1),dph
+0362           1226   ;        C:\Users\root\mcar\Robot copy.c:233: M2_duty = M2_temp / 2;
+0362 750002    1227            mov     __divsint_PARM_2,#0x02
+0365 E4        1228            clr     a
+0366 F501      1229            mov     (__divsint_PARM_2 + 1),a
+0368 85F082    1230            mov     dpl,_M2_temp
+036B 85F183    1231            mov     dph,(_M2_temp + 1)
+036E 120100    1232            lcall   __divsint
+0371 858270    1233            mov     _M2_duty,dpl
+0374 858371    1234            mov     (_M2_duty + 1),dph
+0377 22        1235            ret
+0378           1236   ;------------------------------------------------------------
+0378           1237   ;Allocation info for local variables in function 'main'
+0378           1238   ;------------------------------------------------------------
+0378           1239   ;------------------------------------------------------------
+0378           1240   ;        C:\Users\root\mcar\Robot copy.c:237: void main(void) using 1
+0378           1241   ;        -----------------------------------------
+0378           1242   ;         function main
+0378           1243   ;        -----------------------------------------
+0378           1244   _main:
+0378           1245            using   1
+0378           1246   ;        C:\Users\root\mcar\Robot copy.c:239: while(1)
+0378           1247   L006002?:
+0378           1248   ;        C:\Users\root\mcar\Robot copy.c:241: calculate_DC();
+0378 75D000    1249            mov     psw,#0x00
+037B 120100    1250            lcall   _calculate_DC
+037E 75D008    1251            mov     psw,#0x08
+0381 8001      1252            sjmp    L006002?
+0383           1253            rseg R_CSEG
+0383           1254   
+0000           1255            rseg R_XINIT
+0000           1256   
+0000           1257            rseg R_CONST
+0000           1258   
+002E           1259            CSEG
+002E           1260   
+002E           1261   end

@@ -1,0 +1,599 @@
+<MODULE>
+Robot copy
+</MODULE>
+
+<OPTC51>
+--model-small
+</OPTC51>
+
+<SEGMENTS>
+R_GSINIT,code,0000,NO
+R_BSEG,bit,000A,NO
+R_XSEG,xdata,0000,NO
+BIT_BANK,data,0000,OV
+R_CONST,code,0000,NO
+rbank0,data,0000,OV
+rbank1,data,0000,OV
+rbank2,data,0000,OV
+rbank3,data,0000,OV
+R_PSEG,xdata,0000,NO
+R_DINIT,code,0040,NO
+R_DSEG,data,0016,NO
+R_OSEG,data,0000,OV
+R_IXSEG,xdata,0000,NO
+R_ISEG,idata,0000,NO
+R_HOME,code,0000,NO
+R_XINIT,code,0000,NO
+R_CSEG,code,0383,NO
+</SEGMENTS>
+
+<LOCALS>
+L002004?,R_CSEG,0029,0000
+L002001?,R_CSEG,001E,0000
+L005022?,R_CSEG,01FC,0000
+_serial_temp,R_DSEG,0013,0001
+L003009?,R_CSEG,00E5,0000
+L003007?,R_CSEG,00CE,0000
+L003005?,R_CSEG,00B2,0000
+L003004?,R_CSEG,009B,0000
+L003002?,R_CSEG,007F,0000
+L004006?,R_CSEG,0177,0000
+L004004?,R_CSEG,013C,0000
+L004002?,R_CSEG,00FB,0000
+L005008?,R_CSEG,034D,0000
+L005006?,R_CSEG,033D,0000
+L005005?,R_CSEG,01E4,0000
+L005003?,R_CSEG,02F5,0000
+L005002?,R_CSEG,027A,0000
+_Serial_ISR_parity_1_51,R_BSEG,0008,0001
+L006002?,R_CSEG,0378,0000
+_Serial_ISR_i_1_51,R_DSEG,0014,0002
+L004014?,R_CSEG,0118,0000
+L004013?,R_CSEG,0114,0000
+L004011?,R_CSEG,01A9,0000
+L004010?,R_CSEG,0108,0000
+_Serial_ISR_sloc0_1_0,R_BSEG,0009,0001
+L004023?,R_CSEG,012B,0000
+L004021?,R_CSEG,00F8,0000
+L005015?,R_CSEG,0331,0000
+L005014?,R_CSEG,032D,0000
+L005013?,R_CSEG,0311,0000
+L005012?,R_CSEG,030D,0000
+</LOCALS>
+
+<PUBLICS>
+_M2_dir,R_BSEG,0001,0001
+_no_signal1_count,R_DSEG,000F,0002
+_main,R_CSEG,0378,0000
+_M2_duty,R_DSEG,0007,0002
+_Serial_ISR,R_CSEG,00EC,0000
+__c51_external_startup,R_CSEG,0000,0000
+_main_temp,R_DSEG,0011,0002
+_Timer2_ISR,R_CSEG,0069,0000
+_M1_duty,R_DSEG,0005,0002
+_fn1,R_BSEG,0004,0001
+_fn2,R_BSEG,0005,0001
+_fn3,R_BSEG,0006,0001
+_fn4,R_BSEG,0007,0001
+_x_dir,R_BSEG,0002,0001
+_no_signal0_count,R_DSEG,000D,0002
+_y_dir,R_BSEG,0003,0001
+_pwm_count,R_DSEG,0000,0001
+_M2_temp,R_DSEG,0003,0002
+_calculate_DC,R_CSEG,01AE,0000
+_x_absolute,R_DSEG,0009,0002
+_M1_temp,R_DSEG,0001,0002
+_M1_dir,R_BSEG,0000,0001
+_y_absolute,R_DSEG,000B,0002
+</PUBLICS>
+
+<EXTERNALS>
+__divuint_PARM_2,any,0000,0000
+__mulint,any,0000,0000
+__mulint_PARM_2,any,0000,0000
+__divsint,any,0000,0000
+_crt0,any,0000,0000
+__divsint_PARM_2,any,0000,0000
+__divuint,any,0000,0000
+</EXTERNALS>
+
+<CODE AT 0000>
+</CODE>
+
+<CODE R_HOME>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_CSEG>
+</CODE>
+
+<CODE AT 0000>
+02 addr16(_crt0;)  
+</CODE>
+
+<CODE AT 0023>
+02 addr16(_Serial_ISR;)  
+</CODE>
+
+<CODE AT 002B>
+02 addr16(_Timer2_ISR;)  
+</CODE>
+
+<CODE R_HOME>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_GSINIT>
+</CODE>
+
+<CODE R_DINIT>
+75 data8(_pwm_count;) 00
+E4
+F5 data8(_M1_temp;)
+F5 data8(_M1_temp;0x0001;+;)
+E4
+F5 data8(_M2_temp;)
+F5 data8(_M2_temp;0x0001;+;)
+E4
+F5 data8(_M1_duty;)
+F5 data8(_M1_duty;0x0001;+;)
+E4
+F5 data8(_M2_duty;)
+F5 data8(_M2_duty;0x0001;+;)
+E4
+F5 data8(_x_absolute;)
+F5 data8(_x_absolute;0x0001;+;)
+E4
+F5 data8(_y_absolute;)
+F5 data8(_y_absolute;0x0001;+;)
+E4
+F5 data8(_no_signal0_count;)
+F5 data8(_no_signal0_count;0x0001;+;)
+E4
+F5 data8(_no_signal1_count;)
+F5 data8(_no_signal1_count;0x0001;+;)
+E4
+F5 data8(_main_temp;)
+F5 data8(_main_temp;0x0001;+;)
+C2 bit(_M1_dir;)
+C2 bit(_M2_dir;)
+C2 bit(_x_dir;)
+C2 bit(_y_dir;)
+C2 bit(_fn1;)
+C2 bit(_fn2;)
+C2 bit(_fn3;)
+C2 bit(_fn4;)
+</CODE>
+
+<CODE R_CSEG>
+75 A7 00
+75 97 DE
+75 97 AD
+75 FF 80
+75 EF 06
+75 A7 10
+75 C1 20
+75 A7 00
+75 A9 00
+75 A9 00
+E5 A9
+30 E7 rel3(L002001?;)
+75 A9 03
+75 A9 03
+E5 A9
+30 E7 rel3(L002004?;)
+43 A4 10
+75 E1 01
+75 E2 00
+75 E3 40
+75 98 10
+75 8D E6
+85 8D 8B
+53 89 0F
+43 89 20
+D2 8E
+D2 99
+75 C8 00
+43 8E 10
+75 CA E0
+75 CB E3
+75 CE FF
+75 CF FF
+D2 AD
+D2 CA
+D2 AF
+75 82 00
+22
+C0 E0
+C0 F0
+C0 D0
+75 D0 10
+C2 CF
+05 data8(_pwm_count;)
+74 9C
+25 data8(_pwm_count;)
+50 rel2(L003002?;)
+75 data8(_pwm_count;) 00
+30 bit(_M1_dir;) rel3(L003004?;)
+C2 A1
+AA data8(_pwm_count;)
+7B 00
+C3
+EA
+95 data8(_M1_duty;)
+EB
+64 80
+85 data8(_M1_duty;0x0001;+;) F0
+63 F0 80
+95 F0
+92 A2
+80 rel2(L003005?;)
+C2 A2
+AA data8(_pwm_count;)
+7B 00
+C3
+EA
+95 data8(_M1_duty;)
+EB
+64 80
+85 data8(_M1_duty;0x0001;+;) F0
+63 F0 80
+95 F0
+92 A1
+30 bit(_M2_dir;) rel3(L003007?;)
+C2 A3
+AA data8(_pwm_count;)
+7B 00
+C3
+EA
+95 data8(_M2_duty;)
+EB
+64 80
+85 data8(_M2_duty;0x0001;+;) F0
+63 F0 80
+95 F0
+92 A4
+80 rel2(L003009?;)
+C2 A4
+AA data8(_pwm_count;)
+7B 00
+C3
+EA
+95 data8(_M2_duty;)
+EB
+64 80
+85 data8(_M2_duty;0x0001;+;) F0
+63 F0 80
+95 F0
+92 A3
+D0 D0
+D0 F0
+D0 E0
+32
+C0 E0
+C0 D0
+75 D0 18
+10 99 rel3(L004021?;)
+80 rel2(L004002?;)
+02 addr16(L004011?;)  
+C2 98
+C2 bit(_Serial_ISR_parity_1_51;)
+85 99 data8(_serial_temp;)
+75 data8(_Serial_ISR_i_1_51;) 08
+E4
+F5 data8(_Serial_ISR_i_1_51;0x0001;+;)
+E5 data8(_serial_temp;)
+30 E0 rel3(L004013?;)
+A2 bit(_Serial_ISR_parity_1_51;)
+B3
+92 data8(_Serial_ISR_sloc0_1_0;)
+80 rel2(L004014?;)
+A2 bit(_Serial_ISR_parity_1_51;)
+92 data8(_Serial_ISR_sloc0_1_0;)
+A2 bit(_Serial_ISR_sloc0_1_0;)
+92 data8(_Serial_ISR_parity_1_51;)
+E5 data8(_serial_temp;)
+C3
+13
+F5 data8(_serial_temp;)
+15 data8(_Serial_ISR_i_1_51;)
+74 FF
+B5 data8(_Serial_ISR_i_1_51;) rel3(L004023?;)
+15 data8(_Serial_ISR_i_1_51;0x0001;+;)
+E5 data8(_Serial_ISR_i_1_51;)
+45 data8(_Serial_ISR_i_1_51;0x0001;+;)
+70 rel2(L004010?;)
+75 data8(_Serial_ISR_i_1_51;) 08
+E4
+F5 data8(_Serial_ISR_i_1_51;0x0001;+;)
+20 bit(_Serial_ISR_parity_1_51;) rel3(L004004?;)
+80 rel2(L004011?;)
+E5 99
+F5 data8(_serial_temp;)
+20 E0 rel3(L004006?;)
+E4
+F5 data8(_no_signal0_count;)
+F5 data8(_no_signal0_count;0x0001;+;)
+E5 data8(_serial_temp;)
+C3
+13
+F5 data8(_serial_temp;)
+13
+92 data8(_fn2;)
+E5 data8(_serial_temp;)
+C3
+13
+F5 data8(_serial_temp;)
+13
+92 data8(_fn1;)
+E5 data8(_serial_temp;)
+C3
+13
+F5 data8(_serial_temp;)
+74 07
+55 data8(_serial_temp;)
+FA
+8A data8(_y_absolute;)
+75 data8(_y_absolute;0x0001;+;) 00
+E5 data8(_serial_temp;)
+C4
+23
+54 1F
+F5 data8(_serial_temp;)
+13
+92 data8(_y_dir;)
+80 rel2(L004011?;)
+E4
+F5 data8(_no_signal1_count;)
+F5 data8(_no_signal1_count;0x0001;+;)
+E5 data8(_serial_temp;)
+C3
+13
+F5 data8(_serial_temp;)
+13
+92 data8(_fn4;)
+E5 data8(_serial_temp;)
+C3
+13
+F5 data8(_serial_temp;)
+13
+92 data8(_fn3;)
+E5 data8(_serial_temp;)
+C3
+13
+F5 data8(_serial_temp;)
+74 07
+55 data8(_serial_temp;)
+FA
+8A data8(_x_absolute;)
+75 data8(_x_absolute;0x0001;+;) 00
+E5 data8(_serial_temp;)
+C4
+23
+54 1F
+F5 data8(_serial_temp;)
+13
+92 data8(_x_dir;)
+D0 D0
+D0 E0
+32
+E5 data8(_y_absolute;)
+45 data8(_y_absolute;0x0001;+;)
+70 rel2(L005005?;)
+85 data8(_x_absolute;) data8(__mulint_PARM_2;)
+85 data8(_x_absolute;0x0001;+;) data8(__mulint_PARM_2;0x0001;+;)
+90 00 07
+12 addr16(__mulint;)  
+85 82 data8(_M1_temp;)
+85 83 data8(_M1_temp;0x0001;+;)
+85 data8(_x_absolute;) data8(__mulint_PARM_2;)
+85 data8(_x_absolute;0x0001;+;) data8(__mulint_PARM_2;0x0001;+;)
+90 00 07
+12 addr16(__mulint;)  
+85 82 data8(_M2_temp;)
+85 83 data8(_M2_temp;0x0001;+;)
+A2 bit(_x_dir;)
+92 data8(_M1_dir;)
+A2 bit(_x_dir;)
+B3
+92 data8(_M2_dir;)
+02 addr16(L005006?;)  
+85 data8(_y_absolute;) data8(__mulint_PARM_2;)
+85 data8(_y_absolute;0x0001;+;) data8(__mulint_PARM_2;0x0001;+;)
+90 00 64
+12 addr16(__mulint;)  
+85 82 data8(_main_temp;)
+85 83 data8(_main_temp;0x0001;+;)
+20 bit(_x_dir;) rel3(L005022?;)
+02 addr16(L005002?;)  
+85 data8(_x_absolute;) data8(__mulint_PARM_2;)
+85 data8(_x_absolute;0x0001;+;) data8(__mulint_PARM_2;0x0001;+;)
+85 data8(_main_temp;) 82
+85 data8(_main_temp;0x0001;+;) 83
+12 addr16(__mulint;)  
+AA 82
+AB 83
+75 data8(__divuint_PARM_2;) 0A
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+8A 82
+8B 83
+12 addr16(__divuint;)  
+AA 82
+AB 83
+EA
+25 data8(_main_temp;)
+F5 82
+EB
+35 data8(_main_temp;0x0001;+;)
+F5 83
+75 data8(__divuint_PARM_2;) 07
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+12 addr16(__divuint;)  
+85 82 data8(_M1_temp;)
+85 83 data8(_M1_temp;0x0001;+;)
+85 data8(_x_absolute;) data8(__mulint_PARM_2;)
+85 data8(_x_absolute;0x0001;+;) data8(__mulint_PARM_2;0x0001;+;)
+85 data8(_main_temp;) 82
+85 data8(_main_temp;0x0001;+;) 83
+12 addr16(__mulint;)  
+AA 82
+AB 83
+75 data8(__divuint_PARM_2;) 0A
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+8A 82
+8B 83
+12 addr16(__divuint;)  
+AA 82
+AB 83
+E5 data8(_main_temp;)
+C3
+9A
+F5 82
+E5 data8(_main_temp;0x0001;+;)
+9B
+F5 83
+75 data8(__divuint_PARM_2;) 07
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+12 addr16(__divuint;)  
+85 82 data8(_M2_temp;)
+85 83 data8(_M2_temp;0x0001;+;)
+02 addr16(L005003?;)  
+85 data8(_x_absolute;) data8(__mulint_PARM_2;)
+85 data8(_x_absolute;0x0001;+;) data8(__mulint_PARM_2;0x0001;+;)
+85 data8(_main_temp;) 82
+85 data8(_main_temp;0x0001;+;) 83
+12 addr16(__mulint;)  
+AA 82
+AB 83
+75 data8(__divuint_PARM_2;) 0A
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+8A 82
+8B 83
+12 addr16(__divuint;)  
+AA 82
+AB 83
+E5 data8(_main_temp;)
+C3
+9A
+F5 82
+E5 data8(_main_temp;0x0001;+;)
+9B
+F5 83
+75 data8(__divuint_PARM_2;) 07
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+12 addr16(__divuint;)  
+85 82 data8(_M1_temp;)
+85 83 data8(_M1_temp;0x0001;+;)
+85 data8(_x_absolute;) data8(__mulint_PARM_2;)
+85 data8(_x_absolute;0x0001;+;) data8(__mulint_PARM_2;0x0001;+;)
+85 data8(_main_temp;) 82
+85 data8(_main_temp;0x0001;+;) 83
+12 addr16(__mulint;)  
+AA 82
+AB 83
+75 data8(__divuint_PARM_2;) 0A
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+8A 82
+8B 83
+12 addr16(__divuint;)  
+AA 82
+AB 83
+EA
+25 data8(_main_temp;)
+F5 82
+EB
+35 data8(_main_temp;0x0001;+;)
+F5 83
+75 data8(__divuint_PARM_2;) 07
+E4
+F5 data8(__divuint_PARM_2;0x0001;+;)
+12 addr16(__divuint;)  
+85 82 data8(_M2_temp;)
+85 83 data8(_M2_temp;0x0001;+;)
+C3
+74 64
+95 data8(_M1_temp;)
+E4
+64 80
+85 data8(_M1_temp;0x0001;+;) F0
+63 F0 80
+95 F0
+50 rel2(L005012?;)
+7A 64
+7B 00
+80 rel2(L005013?;)
+AA data8(_M1_temp;)
+AB data8(_M1_temp;0x0001;+;)
+8A data8(_M1_temp;)
+8B data8(_M1_temp;0x0001;+;)
+C3
+74 64
+95 data8(_M2_temp;)
+E4
+64 80
+85 data8(_M2_temp;0x0001;+;) F0
+63 F0 80
+95 F0
+50 rel2(L005014?;)
+7A 64
+7B 00
+80 rel2(L005015?;)
+AA data8(_M2_temp;)
+AB data8(_M2_temp;0x0001;+;)
+8A data8(_M2_temp;)
+8B data8(_M2_temp;0x0001;+;)
+A2 bit(_y_dir;)
+92 data8(_M1_dir;)
+A2 bit(_y_dir;)
+92 data8(_M2_dir;)
+30 bit(_fn2;) rel3(L005008?;)
+85 data8(_M1_temp;) data8(_M1_duty;)
+85 data8(_M1_temp;0x0001;+;) data8(_M1_duty;0x0001;+;)
+85 data8(_M2_temp;) data8(_M2_duty;)
+85 data8(_M2_temp;0x0001;+;) data8(_M2_duty;0x0001;+;)
+22
+75 data8(__divsint_PARM_2;) 02
+E4
+F5 data8(__divsint_PARM_2;0x0001;+;)
+85 data8(_M1_temp;) 82
+85 data8(_M1_temp;0x0001;+;) 83
+12 addr16(__divsint;)  
+85 82 data8(_M1_duty;)
+85 83 data8(_M1_duty;0x0001;+;)
+75 data8(__divsint_PARM_2;) 02
+E4
+F5 data8(__divsint_PARM_2;0x0001;+;)
+85 data8(_M2_temp;) 82
+85 data8(_M2_temp;0x0001;+;) 83
+12 addr16(__divsint;)  
+85 82 data8(_M2_duty;)
+85 83 data8(_M2_duty;0x0001;+;)
+22
+75 D0 00
+12 addr16(_calculate_DC;)  
+75 D0 08
+80 rel2(L006002?;)
+</CODE>
+
+<CODE R_CSEG>
+</CODE>
+
+<CODE R_XINIT>
+</CODE>
+
+<CODE R_CONST>
+</CODE>
+
+<CODE AT 002E>
+</CODE>

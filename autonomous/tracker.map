@@ -1,0 +1,549 @@
+Modules linked:
+   'Autonomous' from 'Autonomous Tracker.obj'
+   'gptrget' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libc51.lib'
+   'uint2fs' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsgt' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fslt' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsmul' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'abs' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libc51.lib'
+   'gptrput' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libc51.lib'
+   'fs2uint' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'crt0' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libc51.lib'
+   'sint2fs' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsdiv' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'ulong2fs' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fscmp' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsreturnval' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsnormalize' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsget2args' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fs2ulong' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'slong2fs' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsget1arg' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+   'fsrshift' from 'D:\School\Programs\CrossIDE\Call51\Bin\..\lib\small\libfloat.lib'
+
+Memory use per module linked:
+C:06836 D:081 I:000 B:012 X:00025 - Autonomous
+C:00028 D:000 I:000 B:000 X:00000 - gptrget
+C:00012 D:000 I:000 B:000 X:00000 - uint2fs
+C:00048 D:000 I:000 B:000 X:00000 - fsgt
+C:00048 D:000 I:000 B:000 X:00000 - fslt
+C:00163 D:000 I:000 B:000 X:00000 - fsmul
+C:00015 D:000 I:000 B:000 X:00000 - abs
+C:00025 D:001 I:000 B:000 X:00000 - gptrput
+C:00011 D:000 I:000 B:000 X:00000 - fs2uint
+C:00113 D:000 I:000 B:000 X:00000 - crt0
+C:00013 D:000 I:000 B:000 X:00000 - sint2fs
+C:00287 D:004 I:000 B:000 X:00000 - fsdiv
+C:00019 D:000 I:000 B:000 X:00000 - ulong2fs
+C:00073 D:000 I:000 B:000 X:00000 - fscmp
+C:00079 D:000 I:000 B:000 X:00000 - fsreturnval
+C:00051 D:000 I:000 B:000 X:00000 - fsnormalize
+C:00046 D:000 I:000 B:000 X:00000 - fsget2args
+C:00039 D:000 I:000 B:000 X:00000 - fs2ulong
+C:00045 D:000 I:000 B:000 X:00000 - slong2fs
+C:00018 D:000 I:000 B:000 X:00000 - fsget1arg
+C:00067 D:000 I:000 B:000 X:00000 - fsrshift
+C:00007 D:000 I:000 B:000 X:00000 - ABSOLUTE
+------------------------------------------------------
+C:08043 D:086 I:000 B:012 X:00025 - Totals
+
+INTERMAL RAM map (see legend below):
+00: 0 0 0 0 0 0 0 0 b b b b . . . . 
+10: 2 2 2 2 2 2 2 2 . . . . . . . . 
+20: K B B a a a a a a a a a a a a a 
+30: a a a a a a a a a a a a a a a a 
+40: a a a a a a a a a a a a a a a a 
+50: a a a a a a a a a a a a a a a a 
+60: a a a a a a a a a a a a a a a a 
+70: . . . . . . . . . . . . . . . . 
+80: . . . . . . . . . . . . . . . . 
+90: . . . . . . . . . . . . . . . . 
+A0: . . . . . . . . . . . . . . . . 
+B0: . . . . . . . . . . . . . . . . 
+C0: . . . . . . . . . . . . . . . . 
+D0: . . . . . . . . . . . . . . . . 
+E0: . . . . . . . . . . . . . . . . 
+F0: . . . . . . . . . . . . . . . . 
+
+Legend:
+	0: Register bank 0
+	1: Register bank 1
+	2: Register bank 2
+	3: Register bank 3
+	B: bits (see 'BIT map' below)
+	K: BIT_BANK
+	a: Autonomous Tracker:R_DSEG
+	b: R_OSEG
+
+BIT map:
+00: U U U U U U U U U U U U U U U U 
+10: U U U U . . . . . . . . . . . . 
+20: . . . . . . . . . . . . . . . . 
+30: . . . . . . . . . . . . . . . . 
+40: . . . . . . . . . . . . . . . . 
+50: . . . . . . . . . . . . . . . . 
+60: . . . . . . . . . . . . . . . . 
+70: . . . . . . . . . . . . . . . . 
+
+CODE usage map:
+0000: 227 256 256 256 256 256 256 256 256 256 256 256 256 256 256 256 
+1000: 256 256 256 256 256 256 256 256 256 256 256 256 256 256 256 136 
+2000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+3000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+4000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+5000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+6000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+7000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+8000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+9000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+A000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+B000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+C000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+D000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+E000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+F000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+Total: 8043 bytes
+
+XDATA usage map:
+0000: 025 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+1000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+2000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+3000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+4000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+5000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+6000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+7000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+8000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+9000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+A000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+B000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+C000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+D000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+E000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+F000: 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 
+Total: 25 bytes
+
+Base Segments:
+   BIT_BANK=D:0020, size=0001
+   R_BSEG=B:0008, size=000C
+   R_CONST=C:0000, size=0000
+   R_CSEG=C:00C9, size=1EBF
+   R_DINIT=C:009F, size=0029
+   R_DSEG=D:0000, size=004D
+   R_GSINIT=C:002E, size=0071
+   R_HOME=C:0000, size=0000
+   R_ISEG=I:0000, size=0000
+   R_IXSEG=X:000E, size=000B
+   R_OSEG=D:0008, size=0004
+   R_PSEG=X:0000, size=0000
+   R_XINIT=C:0003, size=000B
+   R_XSEG=X:0000, size=000E
+   rbank0=D:0000, size=0008
+   rbank2=D:0010, size=0008
+
+Module Segments:
+   Autonomous Tracker:BIT_BANK=D:0020, size=0001
+   Autonomous Tracker:R_BSEG=B:0008, size=000C
+   Autonomous Tracker:R_CSEG=C:00C9, size=1A80
+   Autonomous Tracker:R_DINIT=C:009F, size=0029
+   Autonomous Tracker:R_DSEG=D:0023, size=004D
+   Autonomous Tracker:R_IXSEG=X:000E, size=000B
+   Autonomous Tracker:R_OSEG=D:0008, size=0003
+   Autonomous Tracker:R_XINIT=C:0003, size=000B
+   Autonomous Tracker:R_XSEG=X:0000, size=000E
+   CSEG=C:0000, size=0007
+   abs:R_CSEG=C:1C74, size=000F
+   crt0:R_GSINIT=C:002E, size=0071
+   fs2uint:R_CSEG=C:1C9C, size=000B
+   fs2ulong:R_CSEG=C:1EDF, size=0027
+   fscmp:R_CSEG=C:1DE6, size=0049
+   fsdiv:R_CSEG=C:1CB4, size=011F
+   fsdiv:R_OSEG=D:0008, size=0004
+   fsget1arg:R_CSEG=C:1F33, size=0012
+   fsget2args:R_CSEG=C:1EB1, size=002E
+   fsgt:R_CSEG=C:1B71, size=0030
+   fslt:R_CSEG=C:1BA1, size=0030
+   fsmul:R_CSEG=C:1BD1, size=00A3
+   fsnormalize:R_CSEG=C:1E7E, size=0033
+   fsreturnval:R_CSEG=C:1E2F, size=004F
+   fsrshift:R_CSEG=C:1F45, size=0043
+   gptrget:R_CSEG=C:1B49, size=001C
+   gptrput:R_CSEG=C:1C83, size=0019
+   gptrput:R_OSEG=D:0008, size=0001
+   sint2fs:R_CSEG=C:1CA7, size=000D
+   slong2fs:R_CSEG=C:1F06, size=002D
+   uint2fs:R_CSEG=C:1B65, size=000C
+   ulong2fs:R_CSEG=C:1DD3, size=0013
+
+Public symbols:
+   _ADC_at_Pin=C:0189
+   _Autonomous Tracker_R_DSEG_size=L:004D
+   _Autonomous Tracker_R_DSEG_start=L:0023
+   _Bridge_Rotate=C:16F1
+   _Bridge_Rotate_PARM_2=D:005D
+   _Bridge_Rotate_PARM_3=D:0060
+   _Calibrate_LSensors=C:047F
+   _Calibrate_LSensors_PARM_2=D:002B
+   _Calibrate_LSensors_PARM_3=D:002E
+   _Claw_Pos=C:031C
+   _Detect_Object=C:15C2
+   _Distance=C:0313
+   _Find_Object=C:1698
+   _Find_Tape=C:12D9
+   _Find_Tape_PARM_2=D:004F
+   _Follow_Tape=C:0742
+   _Follow_Tape_PARM_2=D:0034
+   _Follow_Tape_PARM_3=D:0037
+   _InitADC=C:00C9
+   _InitPinADC=C:0146
+   _InitPinADC_PARM_2=D:0008
+   _ML_dir=B:0009
+   _MR_dir=B:0008
+   _R_BSEG_size=L:000C
+   _R_BSEG_start=L:0008
+   _R_CONST_size=L:0000
+   _R_CONST_start=L:0000
+   _R_CSEG_size=L:1EBF
+   _R_CSEG_start=L:00C9
+   _R_DINIT_size=L:0029
+   _R_DINIT_start=L:009F
+   _R_GSINIT_size=L:0071
+   _R_GSINIT_start=L:002E
+   _R_HOME_size=L:0000
+   _R_HOME_start=L:0000
+   _R_ISEG_size=L:0000
+   _R_ISEG_start=L:0000
+   _R_IXSEG_size=L:000B
+   _R_IXSEG_start=L:000E
+   _R_OSEG_size=L:0004
+   _R_OSEG_start=L:0008
+   _R_PSEG_size=L:0000
+   _R_PSEG_start=L:0000
+   _R_XINIT_size=L:000B
+   _R_XINIT_start=L:0003
+   _R_XSEG_size=L:000E
+   _R_XSEG_start=L:0000
+   _Rotate=C:1397
+   _Rotate_PARM_2=D:0054
+   _Timer2_ISR=C:038C
+   _Timer3us=C:00E1
+   _Track_Object=C:111F
+   _Volts_at_Pin=C:019D
+   ___fs2uint=C:1C9C
+   ___fs2ulong=C:1EDF
+   ___fsdiv=C:1CB4
+   ___fsgt=C:1B71
+   ___fslt=C:1BA1
+   ___fsmul=C:1BD1
+   ___sint2fs=C:1CA7
+   ___slong2fs=C:1F06
+   ___uint2fs=C:1B65
+   ___ulong2fs=C:1DD3
+   __c51_external_startup=C:0323
+   __gptrget=C:1B49
+   __gptrput=C:1C83
+   __gptrput_PARM_2=D:0008
+   _abs=C:1C74
+   _break_when_dir_found=B:000F
+   _circ2=B:0010
+   _claw_control=C:0281
+   _claw_count=D:0029
+   _claw_pos=D:0027
+   _crt0=C:002E
+   _debug=C:027C
+   _dir=B:000A
+   _dir_count=X:0014
+   _dir_flag=B:000E
+   _dummy_name_crt0=C:1CA7
+   _find_bridge_flag=B:000B
+   _find_circle1_flag=B:000C
+   _find_circle2_flag=B:000D
+   _main=C:19A8
+   _mot_dir=C:01F8
+   _mot_dir_PARM_2=D:0009
+   _pwm=X:0012
+   _pwmL=X:000E
+   _pwmR=X:0010
+   _pwm_count=X:0016
+   _sonar_count=D:0023
+   _sonar_count_2=D:0025
+   _sonar_op=C:02E3
+   _sonar_state=B:0011
+   _spin_left=C:021F
+   _spin_right=C:024D
+   _stack_start=L:0070
+   _stop=C:020B
+   _timer_count=X:0017
+   _waitms=C:010B
+   fs2ulong_begin=C:1EE1
+   fs_check_negative_zeros=C:1E04
+   fs_compare_uint32=C:1DE6
+   fs_direct_return=C:1E58
+   fs_normalize_a=C:1E7E
+   fs_return_inf=C:1E66
+   fs_return_nan=C:1E73
+   fs_return_zero=C:1E50
+   fs_round_and_return=C:1E2F
+   fs_rshift_a=C:1F45
+   fs_zerocheck_return=C:1E47
+   fsgetarg=C:1F33
+   fsgetargs=C:1EB1
+   slong2fs_doit=C:1F0F
+   ulong2fs_doit=C:1DDC
+
+Local symbols:
+   Autonomous Tracker:L003001?=C:00FC
+   Autonomous Tracker:L003004?=C:00F7
+   Autonomous Tracker:L003007?=C:0107
+   Autonomous Tracker:L004001?=C:011C
+   Autonomous Tracker:L004005?=C:0113
+   Autonomous Tracker:L004007?=C:013E
+   Autonomous Tracker:L004009?=C:0145
+   Autonomous Tracker:L004018?=C:011F
+   Autonomous Tracker:L005001?=C:0169
+   Autonomous Tracker:L005002?=C:0173
+   Autonomous Tracker:L005003?=C:017D
+   Autonomous Tracker:L005005?=C:0185
+   Autonomous Tracker:L005011?=C:0151
+   Autonomous Tracker:L005013?=C:0153
+   Autonomous Tracker:L005014?=C:015F
+   Autonomous Tracker:L005015?=C:0164
+   Autonomous Tracker:L006001?=C:018E
+   Autonomous Tracker:L006004?=C:0193
+   Autonomous Tracker:L012002?=C:027F
+   Autonomous Tracker:L013002?=C:029B
+   Autonomous Tracker:L013004?=C:02BD
+   Autonomous Tracker:L013007?=C:02AD
+   Autonomous Tracker:L014004?=C:030A
+   Autonomous Tracker:L014007?=C:02FB
+   Autonomous Tracker:L014009?=C:0312
+   Autonomous Tracker:L014014?=C:02EB
+   Autonomous Tracker:L017001?=C:0341
+   Autonomous Tracker:L017004?=C:034C
+   Autonomous Tracker:L018004?=C:03E9
+   Autonomous Tracker:L018006?=C:0406
+   Autonomous Tracker:L018007?=C:041E
+   Autonomous Tracker:L018009?=C:043B
+   Autonomous Tracker:L018010?=C:0453
+   Autonomous Tracker:L018017?=C:03BC
+   Autonomous Tracker:L019002?=C:0546
+   Autonomous Tracker:L019003?=C:055F
+   Autonomous Tracker:L019007?=C:057F
+   Autonomous Tracker:L019009?=C:0626
+   Autonomous Tracker:L019010?=C:063C
+   Autonomous Tracker:L019014?=C:065C
+   Autonomous Tracker:L019016?=C:0703
+   Autonomous Tracker:L019017?=C:0719
+   Autonomous Tracker:L019022?=C:04A4
+   Autonomous Tracker:L019024?=C:0741
+   Autonomous Tracker:L019038?=C:04B5
+   Autonomous Tracker:L019039?=C:04C3
+   Autonomous Tracker:L019043?=C:0594
+   Autonomous Tracker:L019047?=C:0671
+   Autonomous Tracker:L019049?=C:0729
+   Autonomous Tracker:L019050?=C:072C
+   Autonomous Tracker:L020002?=C:095D
+   Autonomous Tracker:L020003?=C:0969
+   Autonomous Tracker:L020007?=C:0A67
+   Autonomous Tracker:L020008?=C:0A7B
+   Autonomous Tracker:L020012?=C:0A80
+   Autonomous Tracker:L020015?=C:096E
+   Autonomous Tracker:L020018?=C:0DE8
+   Autonomous Tracker:L020024?=C:0C75
+   Autonomous Tracker:L020030?=C:0AB9
+   Autonomous Tracker:L020031?=C:0E1E
+   Autonomous Tracker:L020033?=C:0E33
+   Autonomous Tracker:L020035?=C:0E4C
+   Autonomous Tracker:L020037?=C:0F9C
+   Autonomous Tracker:L020040?=C:0F9E
+   Autonomous Tracker:L020044?=C:10E4
+   Autonomous Tracker:L020050?=C:111C
+   Autonomous Tracker:L020055?=C:10E9
+   Autonomous Tracker:L020058?=C:07E1
+   Autonomous Tracker:L020091?=C:0878
+   Autonomous Tracker:L020093?=C:0947
+   Autonomous Tracker:L020096?=C:0A46
+   Autonomous Tracker:L020098?=C:0B54
+   Autonomous Tracker:L020099?=C:0BF3
+   Autonomous Tracker:L020101?=C:0C5E
+   Autonomous Tracker:L020102?=C:0CDE
+   Autonomous Tracker:L020105?=C:0DE5
+   Autonomous Tracker:L020108?=C:0E52
+   Autonomous Tracker:L020109?=C:0E58
+   Autonomous Tracker:L020110?=C:0EF7
+   Autonomous Tracker:L020113?=C:0FA4
+   Autonomous Tracker:L020114?=C:103B
+   Autonomous Tracker:L020115?=C:10A4
+   Autonomous Tracker:L020118?=C:1116
+   Autonomous Tracker:L020119?=C:111C
+   Autonomous Tracker:L021002?=C:124A
+   Autonomous Tracker:L021008?=C:125A
+   Autonomous Tracker:L021012?=C:1204
+   Autonomous Tracker:L021016?=C:11DB
+   Autonomous Tracker:L021017?=C:127E
+   Autonomous Tracker:L021021?=C:112D
+   Autonomous Tracker:L021023?=C:12B2
+   Autonomous Tracker:L021038?=C:1133
+   Autonomous Tracker:L021048?=C:12AD
+   Autonomous Tracker:L022002?=C:1372
+   Autonomous Tracker:L022004?=C:12E4
+   Autonomous Tracker:L022006?=C:1396
+   Autonomous Tracker:L022012?=C:12EA
+   Autonomous Tracker:L023004?=C:1429
+   Autonomous Tracker:L023007?=C:14BB
+   Autonomous Tracker:L023009?=C:15C1
+   Autonomous Tracker:L023015?=C:14B2
+   Autonomous Tracker:L023018?=C:153E
+   Autonomous Tracker:L023019?=C:15C1
+   Autonomous Tracker:L024001?=C:1660
+   Autonomous Tracker:L024002?=C:1664
+   Autonomous Tracker:L024005?=C:1694
+   Autonomous Tracker:L025002?=C:16C7
+   Autonomous Tracker:L025004?=C:16E3
+   Autonomous Tracker:L026002?=C:1736
+   Autonomous Tracker:L026006?=C:1863
+   Autonomous Tracker:L026010?=C:183A
+   Autonomous Tracker:L026021?=C:1700
+   Autonomous Tracker:L026023?=C:1829
+   Autonomous Tracker:L026024?=C:190A
+   Autonomous Tracker:L026025?=C:199A
+   Autonomous Tracker:L027002?=C:19DB
+   Autonomous Tracker:_Bridge_Rotate_gnd_VL_1_169=D:0063
+   Autonomous Tracker:_Bridge_Rotate_sloc0_1_0=D:0066
+   Autonomous Tracker:_Bridge_Rotate_sloc1_1_0=D:0069
+   Autonomous Tracker:_Bridge_Rotate_sloc2_1_0=D:006C
+   Autonomous Tracker:_Calibrate_LSensors_VL_1_117=D:0031
+   Autonomous Tracker:_Calibrate_LSensors_countL_1_118=X:0000
+   Autonomous Tracker:_Calibrate_LSensors_countM_1_118=X:0002
+   Autonomous Tracker:_Calibrate_LSensors_countR_1_118=X:0004
+   Autonomous Tracker:_Calibrate_LSensors_flags_1_118=X:0006
+   Autonomous Tracker:_Find_Tape_flag_1_155=B:0013
+   Autonomous Tracker:_Find_Tape_gnd_VM_1_154=D:0051
+   Autonomous Tracker:_Follow_Tape_gnd_VL_1_129=D:003A
+   Autonomous Tracker:_Follow_Tape_sloc0_1_0=D:003D
+   Autonomous Tracker:_Follow_Tape_sloc1_1_0=D:0040
+   Autonomous Tracker:_Follow_Tape_sloc2_1_0=D:0043
+   Autonomous Tracker:_Follow_Tape_sloc3_1_0=D:0047
+   Autonomous Tracker:_Follow_Tape_sloc4_1_0=D:004B
+   Autonomous Tracker:_Rotate_gnd_VL_1_159=D:0057
+   Autonomous Tracker:_Rotate_sloc0_1_0=D:005A
+   Autonomous Tracker:_Track_Object_flag_1_146=B:0012
+   Autonomous Tracker:__xinit__dir_count=C:0009
+   Autonomous Tracker:__xinit__pwm=C:0007
+   Autonomous Tracker:__xinit__pwmL=C:0003
+   Autonomous Tracker:__xinit__pwmR=C:0005
+   Autonomous Tracker:__xinit__pwm_count=C:000B
+   Autonomous Tracker:__xinit__timer_count=C:000C
+   Autonomous Tracker:_main_gnd_VL_1_174=X:0008
+   Autonomous Tracker:_main_gnd_VM_1_174=X:000C
+   Autonomous Tracker:_main_gnd_VR_1_174=X:000A
+   Autonomous Tracker:b0=D:0020
+   Autonomous Tracker:b1=D:0020
+   Autonomous Tracker:b2=D:0020
+   Autonomous Tracker:b3=D:0020
+   Autonomous Tracker:b4=D:0020
+   Autonomous Tracker:b5=D:0020
+   Autonomous Tracker:b6=D:0020
+   Autonomous Tracker:b7=D:0020
+   Autonomous Tracker:bits=D:0020
+   abs:?Done=C:1C82
+   abs:_dummy=C:1C74
+   crt0:PClearLoop?done?=C:0097
+   crt0:PClearLoop?repeat?=C:0089
+   crt0:XClearLoop?done?=C:007F
+   crt0:XClearLoop?repeat?=C:0071
+   crt0:XInitLoop?done?=C:0067
+   crt0:XInitLoop?repeat?=C:0047
+   crt0:__c51_init_data=C:003B
+   crt0:__c51_program_startup=C:009A
+   crt0:forever?home?=C:009D
+   fs2uint:_dummy=C:1C9C
+   fs2ulong:_dummy=C:1EDF
+   fs2ulong:fs2ulong_done=C:1EFE
+   fs2ulong:fs2ulong_int=C:1EEA
+   fs2ulong:fs2ulong_int_ok=C:1EF9
+   fscmp:_dummy=C:1DE6
+   fscmp:a_check=C:1E04
+   fscmp:a_not_neg_zero=C:1E16
+   fscmp:a_not_neg_zero_cleanup=C:1E15
+   fscmp:b_check=C:1E16
+   fscmp:b_not_neg_zero=C:1E2E
+   fscmp:b_not_neg_zero_cleanup_1=C:1E2D
+   fscmp:b_not_neg_zero_cleanup_2=C:1E2C
+   fscmp:b_not_neg_zero_cleanup_3=C:1E2B
+   fscmp:compare32_done=C:1E03
+   fsdiv:L00001?=C:1CBC
+   fsdiv:L00002?=C:1CC5
+   fsdiv:L00003?=C:1CC8
+   fsdiv:L00004?=C:1CCE
+   fsdiv:L00005?=C:1CDB
+   fsdiv:L00006?=C:1CDE
+   fsdiv:L00007?=C:1CE6
+   fsdiv:L00008?=C:1CF2
+   fsdiv:L00009?=C:1CFA
+   fsdiv:L00010?=C:1D10
+   fsdiv:L00011?=C:1D60
+   fsdiv:L00012?=C:1D73
+   fsdiv:L00013?=C:1DC2
+   fsdiv:L00014?=C:1DD0
+   fsdiv:_dummy=C:1CB4
+   fsdiv:saved_b=D:000B
+   fsdiv:saved_r5=D:0008
+   fsdiv:saved_r6=D:0009
+   fsdiv:saved_r7=D:000A
+   fsget1arg:L00001?=C:1F40
+   fsget1arg:_dummy=C:1F33
+   fsget2args:L00001?=C:1EBE
+   fsget2args:L00002?=C:1EDA
+   fsget2args:_dummy=C:1EB1
+   fsgt:_dummy=C:1B71
+   fsgt:a_negative=C:1B86
+   fsgt:a_positive=C:1B7F
+   fsgt:ab_different=C:1B98
+   fsgt:ab_negative=C:1B8F
+   fsgt:ab_positive=C:1B8D
+   fsgt:skip_invert=C:1B9C
+   fslt:_dummy=C:1BA1
+   fslt:a_negative=C:1BB6
+   fslt:a_positive=C:1BAF
+   fslt:ab_different=C:1BC8
+   fslt:ab_negative=C:1BBF
+   fslt:ab_positive=C:1BBD
+   fslt:skip_invert=C:1BCC
+   fsmul:L00001?=C:1BD7
+   fsmul:L00002?=C:1BDA
+   fsmul:L00003?=C:1BE2
+   fsmul:L00004?=C:1BEA
+   fsmul:L00005?=C:1BF2
+   fsmul:L00006?=C:1BFD
+   fsmul:L00007?=C:1C05
+   fsmul:L00010?=C:1C71
+   fsmul:_dummy=C:1BD1
+   fsnormalize:L00001?=C:1E81
+   fsnormalize:L00002?=C:1E93
+   fsnormalize:L00003?=C:1E94
+   fsnormalize:L00004?=C:1E98
+   fsnormalize:L00005?=C:1E9F
+   fsnormalize:L00006?=C:1EAE
+   fsnormalize:_dummy=C:1E7E
+   fsreturnval:L00001?=C:1E35
+   fsreturnval:_dummy=C:1E2F
+   fsrshift:L00001?=C:1F4E
+   fsrshift:L00003?=C:1F73
+   fsrshift:L00005?=C:1F78
+   fsrshift:L00020?=C:1F87
+   fsrshift:_dummy=C:1F45
+   gptrget:codeptr?=C:1B60
+   gptrget:dataptrrestore?=C:1B57
+   gptrget:pdataptr?=C:1B5D
+   gptrget:xdataptr?=C:1B63
+   gptrput:codeptr?=C:1C96
+   gptrput:dataptrrestore?=C:1C91
+   gptrput:pdataptr?=C:1C97
+   gptrput:xdataptr?=C:1C9A
+   sint2fs:_dummy=C:1CA7
+   slong2fs:_dummy=C:1F06
+   slong2fs:slong2fs_positive=C:1F2D
+   uint2fs:_dummy=C:1B65
+   ulong2fs:_dummy=C:1DD3
+   ulong2fs:long2fs_doit=C:1DDE
